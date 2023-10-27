@@ -33,16 +33,16 @@ add_action(
 	function (): void {
 		$assetPathResolver = new AssetPathResolver( get_template_directory() . '/build' );
 
-		$uri = function ( string $uri ): string {
-			return str_starts_with( $uri, '/' ) ? get_stylesheet_directory_uri() . $uri : $uri;
+		$resolve = function ( string $uri ): string {
+			return ( str_starts_with( $uri, '/' ) ? get_stylesheet_directory_uri() : '' ) . $uri;
 		};
 
 		foreach ( $assetPathResolver->getWebpackCssFiles( 'main' ) as $index => $css ) {
-			wp_enqueue_style( "style_{$index}", $uri( $css ) );
+			wp_enqueue_style( "style_{$index}", $resolve( $css ) );
 		}
 
 		foreach ( $assetPathResolver->getWebpackJsFiles( 'main' ) as $index => $js ) {
-			wp_enqueue_script( "script_{$index}", $uri( $js ) );
+			wp_enqueue_script( "script_{$index}", $resolve( $js ) );
 		}
 	}
 );
