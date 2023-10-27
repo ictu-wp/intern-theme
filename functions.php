@@ -27,20 +27,22 @@ add_action(
 
 /**
  * Fires when scripts and styles are enqueued.
- *
  */
-add_action('wp_enqueue_scripts', function() : void {
-	$assetPathResolver = new AssetPathResolver(get_template_directory() . '/build');
+add_action(
+	'wp_enqueue_scripts',
+	function (): void {
+		$assetPathResolver = new AssetPathResolver( get_template_directory() . '/build' );
 
-	$uri = function (string $uri): string {
-		return str_starts_with($uri, '/') ? get_stylesheet_directory_uri() . $uri : $uri;
-	};
+		$uri = function ( string $uri ): string {
+			return str_starts_with( $uri, '/' ) ? get_stylesheet_directory_uri() . $uri : $uri;
+		};
 
-	foreach ($assetPathResolver->getWebpackCssFiles('main') as $index => $css) {
-		wp_enqueue_style("style_{$index}", $uri($css));
+		foreach ( $assetPathResolver->getWebpackCssFiles( 'main' ) as $index => $css ) {
+			wp_enqueue_style( "style_{$index}", $uri( $css ) );
+		}
+
+		foreach ( $assetPathResolver->getWebpackJsFiles( 'main' ) as $index => $js ) {
+			wp_enqueue_script( "script_{$index}", $uri( $js ) );
+		}
 	}
-	
-	foreach ($assetPathResolver->getWebpackJsFiles('main') as $index => $js) {
-		wp_enqueue_script("script_{$index}", $uri($js));
-	}		
-} );
+);
