@@ -11,6 +11,12 @@ Encore
       /** @param {import('webpack-dev-server').Configuration} options */
       (options) => {
         options.liveReload = true;
+        options.static = {
+          watch: false
+        }
+        options.watchFiles = {
+          paths: ['./*.php']
+        }
       }
     )
 ;
