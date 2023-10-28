@@ -9,6 +9,7 @@ add_action(
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'custom-logo' );
 		add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'block-template-parts' );
 		add_theme_support(
 			'html5',
 			array(
@@ -37,12 +38,16 @@ add_action(
 			return ( str_starts_with( $uri, '/' ) ? get_stylesheet_directory_uri() : '' ) . $uri;
 		};
 
-		foreach ( $assetPathResolver->getWebpackCssFiles( 'main' ) as $index => $css ) {
-			wp_enqueue_style( "style_{$index}", $resolve( $css ) );
-		}
+		$enqueue = function ( string $entrypoint ) use ( $assetPathResolver, $resolve ) {
+			foreach ( $assetPathResolver->getWebpackCssFiles( $entrypoint ) as $css ) {
+				wp_enqueue_style( wp_unique_id( $entrypoint ), $resolve( $css ) );
+			}
 
-		foreach ( $assetPathResolver->getWebpackJsFiles( 'main' ) as $index => $js ) {
-			wp_enqueue_script( "script_{$index}", $resolve( $js ) );
-		}
+			foreach ( $assetPathResolver->getWebpackJsFiles( $entrypoint ) as $js ) {
+				wp_enqueue_script( wp_unique_id( $entrypoint ), $resolve( $js ) );
+			}
+		};
+
+		$enqueue( 'main' );
 	}
 );
