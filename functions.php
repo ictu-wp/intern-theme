@@ -2,7 +2,8 @@
 use BenTools\WebpackEncoreResolver\AssetPathResolver;
 
 require_once get_template_directory() . '/vendor/autoload.php';
-require_once get_template_directory() . '/includes/custom-searchform.php';
+require get_template_directory() . '/inc/custom-searchform.php';
+require get_template_directory() . '/inc/customize.php';
 
 add_action(
 	'after_setup_theme',
@@ -21,6 +22,7 @@ add_action(
 		);
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'block-template-parts' );
+		add_theme_support( 'widgets' );
 		add_theme_support(
 			'html5',
 			array(

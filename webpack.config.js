@@ -15,7 +15,7 @@ Encore
           watch: false
         }
         options.watchFiles = {
-          paths: ['./*.php', './includes/*.php']
+          paths: ['./*.php', './{inc,template-parts}/*.php']
         }
       }
     )
