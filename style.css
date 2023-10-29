@@ -1,3 +1,263 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    font-family: Be Vietnam Pro, sans-serif;
+    @apply bg-white;
+}
+
+*:focus {
+    @apply outline-none;
+}
+
+.home {
+    @apply bg-gray-200;
+}
+
+#container {
+    @apply px-[80px] pb-6;
+}
+
+.woocommerce-account > #container {
+    @apply bg-gray-200;
+}
+
+.primary-menu > ul {
+    @apply w-full h-[54px] px-20 py-3 bg-white border-t border-b border-gray-200 justify-start items-center gap-8 inline-flex;
+}
+
+.woocommerce-breadcrumb {
+    @apply my-4 flex flex-row justify-items-center items-center gap-4 text-[#767676];
+}
+
+.product_title {
+    @apply text-zinc-900 text-[32px] font-semibold leading-[44px];
+}
+
+div.product {
+    @apply flex flex-wrap mt-1 gap-4 relative;
+}
+
+li.product {
+    @apply relative;
+}
+
+.woocommerce-product-gallery {
+    @apply flex-[30%];
+}
+
+.entry-summary {
+    @apply flex-[60%];
+}
+
+.woocommerce-tabs {
+    @apply flex-[100%];
+}
+
+.woocommerce-product-gallery__wrapper {
+    @apply flex flex-wrap gap-2;
+}
+
+.woocommerce-product-gallery__wrapper > :first-child {
+    @apply flex-[100%];
+}
+
+.woocommerce-product-gallery__wrapper > :first-child > a > img {
+    @apply w-full;
+}
+
+.wc-tabs {
+    @apply w-full h-14 bg-white border-b border-gray-200 justify-start items-start inline-flex gap-2;
+}
+
+li[role=tab] {
+    @apply w-full h-14 p-4 bg-white justify-center items-center gap-2.5 inline-flex font-bold text-lg;
+}
+
+li[role=tab].active {
+    @apply border-b-2 border-green-500;
+}
+
+.qty {
+    @apply outline-none focus:outline-none;
+}
+
+.woocommerce-variation-add-to-cart, .cart {
+    @apply flex flex-col gap-2 my-4;
+}
+
+.woocommerce-products-header__title {
+    @apply hidden;
+}
+
+.columns-4 {
+    @apply grid grid-cols-4 gap-4;
+}
+
+.woocommerce-loop-product__title {
+    @apply text-lg font-bold mt-2;
+}
+
+ul.products {
+    @apply mt-4;
+}
+
+.price {
+    @apply text-green-500 text-lg font-semibold leading-snug;
+}
+
+li.product > :last-child {
+    @apply hidden;
+}
+
+.onsale {
+    @apply absolute top-1 left-1 p-1 bg-red-500 text-white;
+}
+
+.attachment-woocommerce_thumbnail {
+    @apply rounded-md;
+}
+
+h2 {
+    @apply text-lg font-bold;
+}
+
+
+/* Filter custom */
+
+.ts-hidden-accessible, select[name=orderby] {
+    @apply hidden;
+}
+
+.woocommerce-ordering {
+    @apply h-16;
+}
+
+.woocommerce-result-count {
+    @apply hidden;
+}
+
+.ts-control {
+    @apply float-right max-w-sm relative;
+}
+
+.ts-dropdown-content {
+    @apply absolute right-[80px] mt-12 bg-white border border-gray-200 rounded-md z-10;
+}
+
+.ts-dropdown-content > div:not(:last-child) {
+    @apply border-b border-gray-200;
+}
+
+.ts-dropdown-content > .option {
+    @apply p-4;
+}
+
+/* Account custom */
+
+.woocommerce:has(nav.woocommerce-MyAccount-navigation) {
+    @apply flex flex-row gap-4 pt-6;
+}
+
+.woocommerce-MyAccount-navigation {
+    @apply w-[30%];
+}
+
+.woocommerce-MyAccount-content {
+    @apply p-6 bg-white flex-col justify-start items-start gap-6 inline-flex rounded-lg flex-grow;
+}
+
+.woocommerce-EditAccountForm {
+    @apply flex flex-col gap-4;
+}
+
+.woocommerce-form-row {
+    @apply flex flex-row flex-wrap gap-4;
+}
+
+.woocommerce-form-row > .password-input {
+    @apply flex-grow;
+}
+
+.woocommerce-form-row > label {
+    @apply w-[30%];
+}
+
+.woocommerce-Input {
+    @apply h-11 px-4 rounded-md border border-gray-200 justify-start items-center flex-grow;
+}
+
+.woocommerce-MyAccount-navigation > ul > li {
+    @apply p-4;
+}
+
+.woocommerce-MyAccount-navigation > ul > li:not(:last-child) {
+    @apply border-b border-b-gray-400;
+}
+
+.woocommerce-Button, .button {
+    @apply p-4 bg-green-500 rounded-md text-white block w-0 min-w-max;
+}
+
+/* Pagination */
+
+.woocommerce-pagination {
+    @apply mt-4;
+}
+
+ul.page-numbers {
+    @apply flex flex-row flex-wrap;
+}
+
+ul.page-numbers {
+    @apply flex flex-row flex-wrap;
+}
+
+a.page-numbers, span.current {
+    @apply border border-green-500 px-4 py-1 rounded-none block;
+}
+
+ul.page-numbers > li:not(:last-child) > a, span {
+    @apply border-r-0;
+}
+
+.widget_woo_category {
+    @apply my-2;
+}
+
+.woocommerce-Price-amount > bdi {
+    @apply text-green-500 text-lg font-semibold leading-snug;
+}
+
+del > span.woocommerce-Price-amount > bdi {
+    @apply text-neutral-500 text-sm font-normal line-through leading-[18.20px];
+}
+
+del, ins {
+    all: unset;
+}
+
+.menu-item-has-children {
+    @apply relative;
+}
+
+.menu-item-has-children > ul {
+    @apply absolute top-full bg-white rounded-sm border border-gray-200 hidden z-10 w-fit whitespace-nowrap;
+}
+
+.menu-item-has-children:hover > ul {
+    @apply block;
+}
+
+.sub-menu > li:not(:last-child) {
+    @apply border-b border-b-gray-200;
+}
+
+.sub-menu > li {
+    @apply px-2 py-1;
+}
+
+.footer-columns-1, .footer-columns-2 {
+    @apply text-neutral-500 text-sm font-normal leading-tight flex-grow;
+}

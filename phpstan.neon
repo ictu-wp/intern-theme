@@ -1,0 +1,13 @@
+parameters:
+    level: 8
+    paths:
+        - index.php
+        - functions.php
+        - header.php
+        - footer.php
+        - inc/
+        - template-parts/
+    bootstrapFiles:
+        - vendor/php-stubs/woocommerce-stubs/woocommerce-stubs.php
+includes:
+    - phpstan-baseline.neon

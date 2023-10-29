@@ -2,14 +2,38 @@
 use BenTools\WebpackEncoreResolver\AssetPathResolver;
 
 require_once get_template_directory() . '/vendor/autoload.php';
+require get_template_directory() . '/inc/custom-searchform.php';
+require get_template_directory() . '/inc/customize.php';
+require get_template_directory() . '/inc/widgets.php';
+
+/**
+ * Fires after WordPress has finished loading but before any headers are sent.
+ */
+add_action(
+	'init',
+	function (): void {
+		register_nav_menu( 'main-menu', __( 'Main menu' ) );
+	}
+);
 
 add_action(
 	'after_setup_theme',
 	function (): void {
 		add_theme_support( 'title-tag' );
-		add_theme_support( 'custom-logo' );
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'               => 100,
+				'width'                => 400,
+				'flex-height'          => true,
+				'flex-width'           => true,
+				'header-text'          => array( 'site-title', 'site-description' ),
+				'unlink-homepage-logo' => true,
+			)
+		);
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'block-template-parts' );
+		add_theme_support( 'widgets' );
 		add_theme_support(
 			'html5',
 			array(
@@ -22,6 +46,7 @@ add_action(
 				'script',
 			)
 		);
+		add_theme_support( 'woocommerce' );
 	}
 );
 
@@ -49,5 +74,8 @@ add_action(
 		};
 
 		$enqueue( 'main' );
+
+		wp_enqueue_style( 'fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css' );
+		wp_enqueue_style( 'font', 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap' );
 	}
 );
