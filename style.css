@@ -237,3 +237,27 @@ del > span.woocommerce-Price-amount > bdi {
 del, ins {
     all: unset;
 }
+
+.menu-item-has-children {
+    @apply relative;
+}
+
+.menu-item-has-children > ul {
+    @apply absolute top-full bg-white rounded-sm border border-gray-200 hidden z-10 w-fit whitespace-nowrap;
+}
+
+.menu-item-has-children:hover > ul {
+    @apply block;
+}
+
+.sub-menu > li:not(:last-child) {
+    @apply border-b border-b-gray-200;
+}
+
+.sub-menu > li {
+    @apply px-2 py-1;
+}
+
+.footer-columns-1, .footer-columns-2 {
+    @apply text-neutral-500 text-sm font-normal leading-tight flex-grow;
+}

@@ -28,17 +28,8 @@ function gingdev_customize_register( \WP_Customize_Manager $manager ): void {
 			$manager,
 			'footer_logo',
 			array(
-				'label'         => __( 'Footer Logo' ),
-				'section'       => 'footer',
-				'button_labels' => array(
-					'select'       => __( 'Select logo' ),
-					'change'       => __( 'Change logo' ),
-					'remove'       => __( 'Remove' ),
-					'default'      => __( 'Default' ),
-					'placeholder'  => __( 'No logo selected' ),
-					'frame_title'  => __( 'Select logo' ),
-					'frame_button' => __( 'Choose logo' ),
-				),
+				'label'   => __( 'Footer Logo' ),
+				'section' => 'footer',
 			)
 		)
 	);

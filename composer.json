@@ -1,24 +1,25 @@
 {
     "require-dev": {
-        "vimeo/psalm": "^5.15",
-        "ging-dev/psalm-plugin-wordpress": "5.x-dev",
         "wp-coding-standards/wpcs": "^3.0",
-        "php-stubs/woocommerce-stubs": "^8.2"
+        "php-stubs/woocommerce-stubs": "^8.2",
+        "phpstan/extension-installer": "^1.3",
+        "szepeviktor/phpstan-wordpress": "^1.3",
+        "phpstan/phpstan": "^1.10"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true
         }
     },
     "scripts": {
         "cs": "phpcs",
         "cs-fix": "phpcbf",
-        "psalm": "psalm --no-cache"
+        "stan": "phpstan analyse"
     },
     "require": {
-        "bentools/webpack-encore-resolver": "^0.1.0",
-        "htmlburger/carbon-fields": "^3.6"
+        "bentools/webpack-encore-resolver": "^0.1.0"
     }
 }

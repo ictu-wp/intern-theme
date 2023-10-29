@@ -4,6 +4,17 @@ use BenTools\WebpackEncoreResolver\AssetPathResolver;
 require_once get_template_directory() . '/vendor/autoload.php';
 require get_template_directory() . '/inc/custom-searchform.php';
 require get_template_directory() . '/inc/customize.php';
+require get_template_directory() . '/inc/widgets.php';
+
+/**
+ * Fires after WordPress has finished loading but before any headers are sent.
+ */
+add_action(
+	'init',
+	function (): void {
+		register_nav_menu( 'main-menu', __( 'Main menu' ) );
+	}
+);
 
 add_action(
 	'after_setup_theme',
