@@ -18,6 +18,7 @@
         "psalm": "psalm --no-cache"
     },
     "require": {
-        "bentools/webpack-encore-resolver": "^0.1.0"
+        "bentools/webpack-encore-resolver": "^0.1.0",
+        "htmlburger/carbon-fields": "^3.6"
     }
 }
