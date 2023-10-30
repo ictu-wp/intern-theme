@@ -86,4 +86,11 @@ function gingdev_customize_register( \WP_Customize_Manager $manager ): void {
 			'selector' => '.email',
 		)
 	);
+
+	$manager->selective_refresh->add_partial(
+		'sidebar',
+		array(
+			'selector' => '#footer-sidebar',
+		)
+	);
 }

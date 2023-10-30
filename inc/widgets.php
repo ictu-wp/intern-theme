@@ -2,6 +2,8 @@
 
 require __DIR__ . '/widgets/SupportPhone.php';
 require __DIR__ . '/widgets/BaseLocation.php';
+require __DIR__ . '/widgets/ProductCategories.php';
+require __DIR__ . '/widgets/Product_Widget.php';
 
 /**
  * Fires after all default WordPress widgets have been registered.
@@ -11,9 +13,17 @@ add_action(
 	function (): void {
 		register_sidebar(
 			array(
+				'name'          => __( 'Front Page' ),
+				'id'            => 'front-sidebar',
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div>',
+			)
+		);
+		register_sidebar(
+			array(
 				'name'          => __( 'Footer Sidebar' ),
 				'id'            => 'footer-sidebar',
-				'before_widget' => '<div id="%1$s" class="widget %2$s justify-center items-center gap-3 inline-flex">',
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</div>',
 			)
 		);
@@ -36,5 +46,7 @@ add_action(
 
 		register_widget( SupportPhone::class );
 		register_widget( BaseLocation::class );
+		register_widget( ProductCategories::class );
+		register_widget( Product_Widget::class );
 	}
 );

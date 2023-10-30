@@ -5,6 +5,13 @@ require_once get_template_directory() . '/vendor/autoload.php';
 require get_template_directory() . '/inc/custom-searchform.php';
 require get_template_directory() . '/inc/customize.php';
 require get_template_directory() . '/inc/widgets.php';
+require get_template_directory() . '/inc/custom-posttype.php';
+require get_template_directory() . '/inc/shortcode.php';
+
+/**
+ * @see https://woocommerce.com/document/disable-the-default-stylesheet/
+ */
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
 
 /**
  * Fires after WordPress has finished loading but before any headers are sent.

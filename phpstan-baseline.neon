@@ -6,6 +6,31 @@ parameters:
 			path: inc/custom-searchform.php
 
 		-
+			message: "#^Method BaseLocation\\:\\:form\\(\\) has parameter \\$instance with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: inc/widgets/BaseLocation.php
+
+		-
+			message: "#^Method BaseLocation\\:\\:form\\(\\) should return string but return statement is missing\\.$#"
+			count: 1
+			path: inc/widgets/BaseLocation.php
+
+		-
+			message: "#^Method BaseLocation\\:\\:widget\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: inc/widgets/BaseLocation.php
+
+		-
+			message: "#^Method BaseLocation\\:\\:widget\\(\\) has parameter \\$args with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: inc/widgets/BaseLocation.php
+
+		-
+			message: "#^Method BaseLocation\\:\\:widget\\(\\) has parameter \\$instance with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: inc/widgets/BaseLocation.php
+
+		-
 			message: "#^Method SupportPhone\\:\\:form\\(\\) has parameter \\$instance with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: inc/widgets/SupportPhone.php
