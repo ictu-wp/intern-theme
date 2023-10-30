@@ -2,9 +2,6 @@
 
 class Product_Widget extends WP_Widget {
 
-
-
-
 	private $defaults = array(
 		'term_id' => -1,
 	);

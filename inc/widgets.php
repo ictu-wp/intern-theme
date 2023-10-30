@@ -1,8 +1,8 @@
 <?php
 
-require __DIR__ . '/widgets/SupportPhone.php';
-require __DIR__ . '/widgets/BaseLocation.php';
-require __DIR__ . '/widgets/ProductCategories.php';
+require __DIR__ . '/widgets/SupportPhone_Widget.php';
+require __DIR__ . '/widgets/BaseLocation_Widget.php';
+require __DIR__ . '/widgets/ProductCategories_Widget.php';
 require __DIR__ . '/widgets/Product_Widget.php';
 
 /**
@@ -44,9 +44,9 @@ add_action(
 			)
 		);
 
-		register_widget( SupportPhone::class );
-		register_widget( BaseLocation::class );
-		register_widget( ProductCategories::class );
+		register_widget( SupportPhone_Widget::class );
+		register_widget( BaseLocation_Widget::class );
+		register_widget( ProductCategories_Widget::class );
 		register_widget( Product_Widget::class );
 	}
 );

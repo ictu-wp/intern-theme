@@ -1,6 +1,6 @@
 <?php
 
-class BaseLocation extends WP_Widget {
+class BaseLocation_Widget extends WP_Widget {
 
 	public function __construct() {
 		parent::__construct(

@@ -1,6 +1,6 @@
 <?php
 
-class ProductCategories extends WP_Widget {
+class ProductCategories_Widget extends WP_Widget {
 
 	private $defaults = array(
 		'title' => '',
