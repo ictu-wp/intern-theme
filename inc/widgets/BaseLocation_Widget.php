@@ -5,7 +5,7 @@ class BaseLocation_Widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'base_location',
-			__( 'Base location' ),
+			__( 'Base Location' ),
 			array(
 				'description' => __( 'Base location' ),
 			)

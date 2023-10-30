@@ -5,7 +5,7 @@ class SupportPhone_Widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'support_phone',
-			__( 'Support phone number' ),
+			__( 'Support Phone Number' ),
 			array(
 				'description' => __( 'Add support phone number to footer' ),
 			)

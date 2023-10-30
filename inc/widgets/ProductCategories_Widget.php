@@ -9,7 +9,7 @@ class ProductCategories_Widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'woocategories',
-			__( 'Woocommerce categories' ),
+			__( 'Woocommerce Categories' ),
 			array(
 				'description' => __( 'List categories of woocommerce' ),
 			)

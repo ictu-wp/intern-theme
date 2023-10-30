@@ -9,7 +9,7 @@ class Product_Widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'woo_product_widget',
-			'Woocommerce Product Widget',
+			'Woocommerce Products',
 			array( 'description' => 'Widget to display products for Woocommerce' )
 		);
 	}

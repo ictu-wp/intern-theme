@@ -51,10 +51,7 @@ add_shortcode(
 function show_woocommerce_categories( string $title ) {
 	/** @var list<WP_Term> */
 	$categories = get_categories(
-		array(
-			'taxonomy'   => 'product_cat',
-			'hide_empty' => false,
-		)
+		array( 'taxonomy' => 'product_cat' )
 	);
 
 	?>
@@ -62,13 +59,13 @@ function show_woocommerce_categories( string $title ) {
 		<div class="w-full text-zinc-900 text-2xl font-semibold leading-7 mb-2">
 			<?php echo $title; ?>
 		</div>
-		<div class="grid grid-cols-6">
+		<div class="grid grid-cols-6 bg-white">
 			<?php
 			foreach ( $categories as $category ) :
 				$thumbnail_id = get_term_meta( $category->term_id, 'thumbnail_id', true );
 				$image        = wp_get_attachment_url( $thumbnail_id );
 				?>
-				<div class="w-52 h-52 p-6 bg-white flex-col justify-center items-center gap-4 inline-flex">
+				<div class="w-52 h-52 p-6 flex-col justify-center items-center gap-4 inline-flex">
 					<div class="w-24 h-24 relative">
 						<div class="w-24 h-24 left-0 top-0 absolute bg-gray-200 rounded-full"></div>
 						<?php if ( $image ) : ?>
