@@ -45,14 +45,14 @@ class Product_Widget extends WP_Widget {
 				<div class="w-96 text-zinc-900 text-2xl font-semibold leading-7">
 					<?php echo $title ?: __( 'All Products' ); ?>
 				</div>
-				<ul class="flex overflow-x-auto gap-2 hide-scrollbar">
+				<ul class="hide-scrollbar multiple-items">
 					<?php
 					while ( $products->have_posts() ) :
 						$products->the_post();
 						global $product;
 						$thumbnail = get_the_post_thumbnail_url( $product->get_id() );
 						?>
-						<div class="flex flex-col gap-2">
+						<li class="flex flex-col gap-2">
 							<?php if ( $thumbnail ) : ?>
 								<img src="<?php echo $thumbnail; ?>" alt="Product" class="w-64 h-64 rounded-md">
 							<?php endif; ?>
@@ -64,7 +64,7 @@ class Product_Widget extends WP_Widget {
 							<div>
 								<?php echo $product->get_price_html(); ?>
 							</div>
-						</div>
+						</li>
 						<?php
 					endwhile;
 					wp_reset_postdata();

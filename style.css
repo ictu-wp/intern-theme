@@ -237,7 +237,11 @@ del, ins {
 }
 
 .footer-columns-1, .footer-columns-2 {
-    @apply text-neutral-500 text-sm font-normal leading-tight flex-grow;
+    @apply text-neutral-500 text-sm font-normal leading-tight;
+}
+
+.footer-columns-1 > h2, .footer-columns-2 > h2 {
+    @apply text-white text-base font-semibold leading-tight;
 }
 
 .woocommerce-no-products-found, .wc-empty-cart-message {
