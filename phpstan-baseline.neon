@@ -56,6 +56,51 @@ parameters:
 			path: inc/widgets/CustomerShowcase_Widget.php
 
 		-
+			message: "#^Method FlashSale_Widget\\:\\:form\\(\\) has parameter \\$instance with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: inc/widgets/FlashSale_Widget.php
+
+		-
+			message: "#^Method FlashSale_Widget\\:\\:form\\(\\) should return string but return statement is missing\\.$#"
+			count: 1
+			path: inc/widgets/FlashSale_Widget.php
+
+		-
+			message: "#^Method FlashSale_Widget\\:\\:widget\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: inc/widgets/FlashSale_Widget.php
+
+		-
+			message: "#^Method FlashSale_Widget\\:\\:widget\\(\\) has parameter \\$args with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: inc/widgets/FlashSale_Widget.php
+
+		-
+			message: "#^Method FlashSale_Widget\\:\\:widget\\(\\) has parameter \\$instance with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: inc/widgets/FlashSale_Widget.php
+
+		-
+			message: "#^Property FlashSale_Widget\\:\\:\\$defaults has no type specified\\.$#"
+			count: 1
+			path: inc/widgets/FlashSale_Widget.php
+
+		-
+			message: "#^Method LogoShowcase_Widget\\:\\:widget\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: inc/widgets/LogoShowcase_Widget.php
+
+		-
+			message: "#^Method LogoShowcase_Widget\\:\\:widget\\(\\) has parameter \\$args with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: inc/widgets/LogoShowcase_Widget.php
+
+		-
+			message: "#^Method LogoShowcase_Widget\\:\\:widget\\(\\) has parameter \\$instance with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: inc/widgets/LogoShowcase_Widget.php
+
+		-
 			message: "#^Method ProductCategories_Widget\\:\\:form\\(\\) has parameter \\$instance with no value type specified in iterable type array\\.$#"
 			count: 1
 			path: inc/widgets/ProductCategories_Widget.php
