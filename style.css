@@ -259,3 +259,7 @@ del, ins {
 ul.customer-showcase > div > div > div > div {
     @apply flex gap-6;
 }
+
+div.products-sale > div > div > div > div {
+    @apply w-full h-96 p-6 justify-start items-start gap-7 inline-flex;
+}

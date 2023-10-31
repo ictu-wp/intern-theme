@@ -1,5 +1,6 @@
 import './style.css'
 import 'slick-carousel';
+import 'jquery-countdown'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
@@ -20,4 +21,20 @@ jQuery(function() {
     prevArrow: $('.prev-customer'),
     arrows: true,
   })
+
+  $('.products-sale').slick({
+    infinite: true,
+    slidesPerRow: 4,
+    centerMode: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+  });
+
+  $('#countdown').countdown($('#end_at').val(), function (e) {
+    $('.hour').text(e.offset.totalHours);
+    $('.minute').text(e.offset.minutes);
+    $('.second').text(e.offset.seconds);
+  }).on('finish.countdown', function () {
+    $(this).hide();
+  });
 })
