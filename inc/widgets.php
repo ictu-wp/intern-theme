@@ -4,6 +4,7 @@ require __DIR__ . '/widgets/SupportPhone_Widget.php';
 require __DIR__ . '/widgets/BaseLocation_Widget.php';
 require __DIR__ . '/widgets/ProductCategories_Widget.php';
 require __DIR__ . '/widgets/Product_Widget.php';
+require __DIR__ . '/widgets/CustomerShowcase_Widget.php';
 
 /**
  * Fires after all default WordPress widgets have been registered.
@@ -48,5 +49,6 @@ add_action(
 		register_widget( BaseLocation_Widget::class );
 		register_widget( ProductCategories_Widget::class );
 		register_widget( Product_Widget::class );
+		register_widget( CustomerShowcase_Widget::class );
 	}
 );

@@ -255,3 +255,7 @@ del, ins {
 .hide-scrollbar::-webkit-scrollbar {
     display: none;
 }
+
+ul.customer-showcase > div > div > div > div {
+    @apply flex gap-6;
+}

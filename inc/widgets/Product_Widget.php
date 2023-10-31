@@ -34,6 +34,7 @@ class Product_Widget extends WP_Widget {
 				),
 			);
 
+			// @phpstan-ignore-next-line
 			$title = get_term( $instance['term_id'] )->name;
 		}
 

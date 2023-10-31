@@ -3,7 +3,7 @@
 add_shortcode(
 	'logo_showcase',
 	/**
-	 * @param array{'per_page':int} $args
+	 * @param array<string|int> $args
 	 * @param string $content
 	 */
 	function ( $args, $content ) {
@@ -48,7 +48,7 @@ add_shortcode(
 );
 
 
-function show_woocommerce_categories( string $title ) {
+function show_woocommerce_categories( string $title ): void {
 	/** @var list<WP_Term> */
 	$categories = get_categories(
 		array( 'taxonomy' => 'product_cat' )

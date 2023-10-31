@@ -6,51 +6,136 @@ parameters:
 			path: inc/custom-searchform.php
 
 		-
-			message: "#^Method BaseLocation\\:\\:form\\(\\) has parameter \\$instance with no value type specified in iterable type array\\.$#"
+			message: "#^Parameter \\#1 \\(string\\|WP_Error\\) of echo cannot be converted to string\\.$#"
 			count: 1
-			path: inc/widgets/BaseLocation.php
+			path: inc/shortcode.php
 
 		-
-			message: "#^Method BaseLocation\\:\\:form\\(\\) should return string but return statement is missing\\.$#"
+			message: "#^Method BaseLocation_Widget\\:\\:form\\(\\) has parameter \\$instance with no value type specified in iterable type array\\.$#"
 			count: 1
-			path: inc/widgets/BaseLocation.php
+			path: inc/widgets/BaseLocation_Widget.php
 
 		-
-			message: "#^Method BaseLocation\\:\\:widget\\(\\) has no return type specified\\.$#"
+			message: "#^Method BaseLocation_Widget\\:\\:form\\(\\) should return string but return statement is missing\\.$#"
 			count: 1
-			path: inc/widgets/BaseLocation.php
+			path: inc/widgets/BaseLocation_Widget.php
 
 		-
-			message: "#^Method BaseLocation\\:\\:widget\\(\\) has parameter \\$args with no value type specified in iterable type array\\.$#"
+			message: "#^Method BaseLocation_Widget\\:\\:widget\\(\\) has no return type specified\\.$#"
 			count: 1
-			path: inc/widgets/BaseLocation.php
+			path: inc/widgets/BaseLocation_Widget.php
 
 		-
-			message: "#^Method BaseLocation\\:\\:widget\\(\\) has parameter \\$instance with no value type specified in iterable type array\\.$#"
+			message: "#^Method BaseLocation_Widget\\:\\:widget\\(\\) has parameter \\$args with no value type specified in iterable type array\\.$#"
 			count: 1
-			path: inc/widgets/BaseLocation.php
+			path: inc/widgets/BaseLocation_Widget.php
 
 		-
-			message: "#^Method SupportPhone\\:\\:form\\(\\) has parameter \\$instance with no value type specified in iterable type array\\.$#"
+			message: "#^Method BaseLocation_Widget\\:\\:widget\\(\\) has parameter \\$instance with no value type specified in iterable type array\\.$#"
 			count: 1
-			path: inc/widgets/SupportPhone.php
+			path: inc/widgets/BaseLocation_Widget.php
 
 		-
-			message: "#^Method SupportPhone\\:\\:form\\(\\) should return string but return statement is missing\\.$#"
+			message: "#^Method CustomerShowcase_Widget\\:\\:widget\\(\\) has no return type specified\\.$#"
 			count: 1
-			path: inc/widgets/SupportPhone.php
+			path: inc/widgets/CustomerShowcase_Widget.php
 
 		-
-			message: "#^Method SupportPhone\\:\\:widget\\(\\) has no return type specified\\.$#"
+			message: "#^Method CustomerShowcase_Widget\\:\\:widget\\(\\) has parameter \\$args with no value type specified in iterable type array\\.$#"
 			count: 1
-			path: inc/widgets/SupportPhone.php
+			path: inc/widgets/CustomerShowcase_Widget.php
 
 		-
-			message: "#^Method SupportPhone\\:\\:widget\\(\\) has parameter \\$args with no value type specified in iterable type array\\.$#"
+			message: "#^Method CustomerShowcase_Widget\\:\\:widget\\(\\) has parameter \\$instance with no value type specified in iterable type array\\.$#"
 			count: 1
-			path: inc/widgets/SupportPhone.php
+			path: inc/widgets/CustomerShowcase_Widget.php
 
 		-
-			message: "#^Method SupportPhone\\:\\:widget\\(\\) has parameter \\$instance with no value type specified in iterable type array\\.$#"
+			message: "#^Parameter \\#1 \\(string\\|WP_Error\\|false\\) of echo cannot be converted to string\\.$#"
 			count: 1
-			path: inc/widgets/SupportPhone.php
+			path: inc/widgets/CustomerShowcase_Widget.php
+
+		-
+			message: "#^Method ProductCategories_Widget\\:\\:form\\(\\) has parameter \\$instance with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: inc/widgets/ProductCategories_Widget.php
+
+		-
+			message: "#^Method ProductCategories_Widget\\:\\:form\\(\\) should return string but return statement is missing\\.$#"
+			count: 1
+			path: inc/widgets/ProductCategories_Widget.php
+
+		-
+			message: "#^Method ProductCategories_Widget\\:\\:widget\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: inc/widgets/ProductCategories_Widget.php
+
+		-
+			message: "#^Method ProductCategories_Widget\\:\\:widget\\(\\) has parameter \\$args with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: inc/widgets/ProductCategories_Widget.php
+
+		-
+			message: "#^Method ProductCategories_Widget\\:\\:widget\\(\\) has parameter \\$instance with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: inc/widgets/ProductCategories_Widget.php
+
+		-
+			message: "#^Property ProductCategories_Widget\\:\\:\\$defaults has no type specified\\.$#"
+			count: 1
+			path: inc/widgets/ProductCategories_Widget.php
+
+		-
+			message: "#^Method Product_Widget\\:\\:form\\(\\) has parameter \\$instance with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: inc/widgets/Product_Widget.php
+
+		-
+			message: "#^Method Product_Widget\\:\\:form\\(\\) should return string but return statement is missing\\.$#"
+			count: 1
+			path: inc/widgets/Product_Widget.php
+
+		-
+			message: "#^Method Product_Widget\\:\\:widget\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: inc/widgets/Product_Widget.php
+
+		-
+			message: "#^Method Product_Widget\\:\\:widget\\(\\) has parameter \\$args with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: inc/widgets/Product_Widget.php
+
+		-
+			message: "#^Method Product_Widget\\:\\:widget\\(\\) has parameter \\$instance with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: inc/widgets/Product_Widget.php
+
+		-
+			message: "#^Property Product_Widget\\:\\:\\$defaults has no type specified\\.$#"
+			count: 1
+			path: inc/widgets/Product_Widget.php
+
+		-
+			message: "#^Method SupportPhone_Widget\\:\\:form\\(\\) has parameter \\$instance with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: inc/widgets/SupportPhone_Widget.php
+
+		-
+			message: "#^Method SupportPhone_Widget\\:\\:form\\(\\) should return string but return statement is missing\\.$#"
+			count: 1
+			path: inc/widgets/SupportPhone_Widget.php
+
+		-
+			message: "#^Method SupportPhone_Widget\\:\\:widget\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: inc/widgets/SupportPhone_Widget.php
+
+		-
+			message: "#^Method SupportPhone_Widget\\:\\:widget\\(\\) has parameter \\$args with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: inc/widgets/SupportPhone_Widget.php
+
+		-
+			message: "#^Method SupportPhone_Widget\\:\\:widget\\(\\) has parameter \\$instance with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: inc/widgets/SupportPhone_Widget.php

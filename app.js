@@ -11,7 +11,13 @@ jQuery(function() {
       infinite: false,
       slidesPerRow: 4,
       centerMode: true,
-      dots: true,
     });
   });
+
+  $('.customer-showcase').slick({
+    slidesPerRow: 2,
+    nextArrow: $('.next-customer'),
+    prevArrow: $('.prev-customer'),
+    arrows: true,
+  })
 })
