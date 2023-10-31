@@ -1,6 +1,11 @@
 <?php
 
 class CustomerShowcase_Widget extends WP_Widget {
+
+	private $defaults = array(
+		'title' => '',
+	);
+
 	public function __construct() {
 		parent::__construct(
 			'customer_showcase',
@@ -11,10 +16,26 @@ class CustomerShowcase_Widget extends WP_Widget {
 		);
 	}
 
+	public function form( $instance ) {
+		$instance = wp_parse_args( $instance, $this->defaults );
+
+		?>
+		<p>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>">
+				<?php echo __( 'Title' ); ?>
+			</label>
+			<input class="widefat" type="text" name="<?php echo $this->get_field_name( 'title' ); ?>"
+				id="<?php echo $this->get_field_id( 'title' ); ?>" value="<?php echo $instance['title']; ?>" />
+		</p>
+		<?php
+	}
+
 	/**
 	 * @global WP_Post $post
 	 */
 	public function widget( $args, $instance ) {
+		$instance = wp_parse_args( $instance, $this->defaults );
+
 		echo $args['before_widget'];
 
 		$customers = new WP_Query(
@@ -23,11 +44,12 @@ class CustomerShowcase_Widget extends WP_Widget {
 			)
 		);
 
-		if ( $customers->have_posts() ) : ?>
+		if ( $customers->have_posts() ) :
+			?>
 			<div class="px-[89px] py-[50px] flex flex-col gap-4">
 				<div class="w-full h-10 justify-start items-center inline-flex">
 					<div class="grow shrink basis-0 text-zinc-900 text-2xl font-semibold leading-7">
-						KHÁCH HÀNG NÓI GÌ VỀ CHÚNG TÔI
+						<?php echo $instance['title']; ?>
 					</div>
 					<div class="justify-start items-start gap-4 flex">
 						<div
