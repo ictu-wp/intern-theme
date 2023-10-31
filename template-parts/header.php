@@ -21,13 +21,17 @@
 				<?php echo __( 'Cart' ); ?>
 			</div>
 			<div class="text-neutral-500 text-xs font-normal leading-none">
-				<?php echo WC()->cart->get_cart_contents_count(); ?> <?php echo __( 'items' ); ?>
+				<a href="<?php echo wc_get_page_permalink( 'cart' ); ?>">
+					<?php echo WC()->cart->get_cart_contents_count(); ?>
+					<?php echo __( 'items' ); ?>
+				</a>
 			</div>
 		</div>
 	</div>
 	<?php if ( is_user_logged_in() ) : ?>
 		<div class="h-10 justify-center items-center gap-2 flex">
-			<img class="w-10 h-10 rounded-full border border-gray-200" src="<?php echo get_avatar_url( get_current_user_id() ); ?>" />
+			<img class="w-10 h-10 rounded-full border border-gray-200"
+				src="<?php echo get_avatar_url( get_current_user_id() ); ?>" />
 			<div class="flex-col justify-center items-start gap-0.5 inline-flex">
 				<div class="text-zinc-900 text-sm font-semibold leading-none">
 					<?php echo get_current_user(); ?>

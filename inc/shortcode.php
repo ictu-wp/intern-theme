@@ -1,19 +1,15 @@
 <?php
 
-add_shortcode(
-	'logo_showcase',
-	/**
-	 * @param array<string|int> $args
-	 * @param string $content
-	 */
-	function ( $args, $content ) {
-		$query = array(
-			'post_type' => 'logo',
-		);
+add_shortcode( 'logo_showcase', 'logo_showcase' );
 
-		$logo_query = new WP_Query( $query );
-		ob_start();
-		?>
+function logo_showcase(): string {
+	$query = array(
+		'post_type' => 'logo',
+	);
+
+	$logo_query = new WP_Query( $query );
+	ob_start();
+	?>
 	<div class="w-full h-36 px-20 justify-start items-center gap-12 inline-flex bg-white">
 		<?php
 		if ( $logo_query->have_posts() ) :
@@ -22,16 +18,14 @@ add_shortcode(
 				?>
 				<?php the_post_thumbnail(); ?>
 				<?php
-				endwhile;
+			endwhile;
 			wp_reset_postdata();
-			endif;
+		endif;
 		?>
 	</div>
-		<?php
-		return ob_get_clean();
-	}
-);
-
+	<?php
+	return ob_get_clean() ?: '';
+}
 
 add_shortcode(
 	'woo_categories',
