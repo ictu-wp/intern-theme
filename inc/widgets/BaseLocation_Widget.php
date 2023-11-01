@@ -8,6 +8,7 @@ class BaseLocation_Widget extends WP_Widget {
 			__( 'Base Location' ),
 			array(
 				'description' => __( 'Base location' ),
+				'icon'        => 'dashicons-location',
 			)
 		);
 	}

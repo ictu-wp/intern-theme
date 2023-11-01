@@ -10,6 +10,7 @@ class FlashSale_Widget extends WP_Widget {
 			__( 'Flash Sale' ),
 			array(
 				'description' => __( 'Display flashsale' ),
+				'icon'        => 'dashicons-superhero',
 			)
 		);
 

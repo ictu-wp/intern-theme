@@ -69,6 +69,7 @@ function register_custom_post_type(): void {
 			'hierarchical'       => false,
 			'supports'           => array( 'title', 'editor', 'thumbnail' ),
 			'taxonomies'         => array( 'customer_role' ),
+			'menu_icon'          => 'dashicons-admin-users',
 		)
 	);
 

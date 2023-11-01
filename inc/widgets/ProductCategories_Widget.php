@@ -12,6 +12,7 @@ class ProductCategories_Widget extends WP_Widget {
 			__( 'Woocommerce Categories' ),
 			array(
 				'description' => __( 'List categories of woocommerce' ),
+				'icon'        => 'dashicons-category',
 			)
 		);
 	}

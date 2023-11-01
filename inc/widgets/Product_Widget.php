@@ -10,7 +10,10 @@ class Product_Widget extends WP_Widget {
 		parent::__construct(
 			'woo_product_widget',
 			'Woocommerce Products',
-			array( 'description' => 'Widget to display products for Woocommerce' )
+			array(
+				'description' => 'Widget to display products for Woocommerce',
+				'icon'        => 'dashicons-cart',
+			)
 		);
 	}
 

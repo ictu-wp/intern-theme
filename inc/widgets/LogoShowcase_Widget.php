@@ -7,6 +7,7 @@ class LogoShowcase_Widget extends WP_Widget {
 			__( 'Logo Showcase' ),
 			array(
 				'description' => __( 'Your logo showcase' ),
+				'icon'        => 'dashicons-format-image',
 			)
 		);
 	}

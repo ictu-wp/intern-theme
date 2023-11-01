@@ -12,6 +12,7 @@ class CustomerShowcase_Widget extends WP_Widget {
 			__( 'Customer Showcase' ),
 			array(
 				'description' => __( 'Your customer showcase' ),
+				'icon'        => 'dashicons-admin-users',
 			)
 		);
 	}

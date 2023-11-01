@@ -8,6 +8,7 @@ class SupportPhone_Widget extends WP_Widget {
 			__( 'Support Phone Number' ),
 			array(
 				'description' => __( 'Add support phone number to footer' ),
+				'icon'        => 'dashicons-phone',
 			)
 		);
 	}
