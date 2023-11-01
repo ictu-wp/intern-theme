@@ -47,7 +47,7 @@ class CustomerShowcase_Widget extends WP_Widget {
 
 		if ( $customers->have_posts() ) :
 			?>
-			<div class="px-[89px] py-[50px] flex flex-col gap-4">
+			<div class="px-[89px] py-[50px] flex flex-col gap-4 bg-gray-200">
 				<div class="w-full h-10 justify-start items-center inline-flex">
 					<div class="grow shrink basis-0 text-zinc-900 text-2xl font-semibold leading-7">
 						<?php echo $instance['title']; ?>

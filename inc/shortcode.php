@@ -49,7 +49,7 @@ function show_woocommerce_categories( string $title ): void {
 	);
 
 	?>
-	<div class="px-[89px] py-[50px]">
+	<div class="px-[89px] py-[50px] bg-gray-200">
 		<div class="w-full text-zinc-900 text-2xl font-semibold leading-7 mb-2">
 			<?php echo $title; ?>
 		</div>

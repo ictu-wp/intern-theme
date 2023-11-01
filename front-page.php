@@ -1,5 +1,8 @@
 <?php get_header(); ?>
 <main class="mt-6">
+	<?php if ( is_active_sidebar( 'smartslider_area_1' ) ) : ?>
+		<?php dynamic_sidebar( 'smartslider_area_1' ); ?>
+	<?php endif; ?>
 	<?php the_content(); ?>
 	<?php if ( is_active_sidebar( 'front-sidebar' ) ) : ?>
 		<?php dynamic_sidebar( 'front-sidebar' ); ?>

@@ -11,10 +11,6 @@ body {
     @apply outline-none;
 }
 
-.home {
-    @apply bg-gray-200;
-}
-
 #main {
     @apply px-[80px] pb-6;
 }
@@ -290,4 +286,12 @@ li:has(span.current) {
 
 span.current {
     @apply text-green-500 text-sm font-normal leading-tight;
+}
+
+.mini-item > img {
+    @apply w-20 h-20 rounded-md;
+}
+
+.mini-cart-modal {
+    @apply hidden;
 }

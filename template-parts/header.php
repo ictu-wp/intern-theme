@@ -43,7 +43,7 @@
 				<?php echo __( 'Cart' ); ?>
 			</div>
 			<div class="text-neutral-500 text-xs font-normal leading-none">
-				<a href="<?php echo wc_get_page_permalink( 'cart' ); ?>">
+				<a href="#" id="minicart-open">
 					<?php echo WC()->cart->get_cart_contents_count(); ?>
 					<?php echo __( 'items' ); ?>
 				</a>

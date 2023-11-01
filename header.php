@@ -6,7 +6,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<?php wp_head(); ?>
 </head>
+
 <?php get_template_part( 'template-parts/header' ); ?>
+<?php get_template_part( 'template-parts/mini-cart' ); ?>
+
 <?php
 	wp_nav_menu(
 		array(

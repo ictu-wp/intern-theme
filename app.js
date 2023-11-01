@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick-theme.css'
 
 window.$ = window.jQuery = require('jquery')
 
-jQuery(function() {
+jQuery(function () {
   $('.multiple-items').each(function () {
     $(this).slick({
       infinite: false,
@@ -36,5 +36,31 @@ jQuery(function() {
     $('.second').text(e.offset.seconds);
   }).on('finish.countdown', function () {
     $(this).hide();
+  });
+
+  $(document).on('click', '#minicart-close', function () {
+    $('.mini-cart-modal').hide();
+  })
+
+  $(document).on('click', '#minicart-open', function () {
+    $('.mini-cart-modal').show();
+  })
+
+  $(document).on('click', '.remove-item', function (e) {
+    e.preventDefault();
+    $.ajax({
+      url: $(this).attr('href'),
+      complete: function (e, _xhr, _options) {
+        if (e.status === 200) {
+          const selector = ['#minicart', '#minicart-open'];
+          const $dom = $($.parseHTML(e.responseText));
+          selector.forEach(function (id) {
+            $(id).replaceWith($dom.find(id));
+          })
+        } else {
+          console.log("error");
+        }
+      }
+    });
   });
 })
