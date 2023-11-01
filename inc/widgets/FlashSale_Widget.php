@@ -93,10 +93,14 @@ class FlashSale_Widget extends WP_Widget {
 						<div class="flex flex-col">
 							<?php if ( $thumbnail ) : ?>
 								<img src="<?php echo $thumbnail; ?>" alt="sale" class="w-64 h-64 rounded-md">
-								<a href="<?php the_permalink(); ?>">
-									<?php the_title(); ?>
-								</a>
-								<?php echo $product->get_price_html(); ?>
+								<div>
+									<a href="<?php the_permalink(); ?>">
+										<?php the_title(); ?>
+									</a>
+								</div>
+								<div>
+									<?php echo $product->get_price_html(); ?>
+								</div>
 							<?php endif; ?>
 						</div>
 						<?php

@@ -7,6 +7,7 @@ require get_template_directory() . '/inc/customize.php';
 require get_template_directory() . '/inc/widgets.php';
 require get_template_directory() . '/inc/custom-posttype.php';
 require get_template_directory() . '/inc/shortcode.php';
+require get_template_directory() . '/inc/woocommerce.php';
 
 /**
  * @see https://woocommerce.com/document/disable-the-default-stylesheet/

@@ -41,6 +41,8 @@ function gingdev_customize_register( \WP_Customize_Manager $manager ): void {
 		)
 	);
 
+	$manager->add_setting( 'phone_number' );
+
 	$manager->add_control(
 		'copyright',
 		array(
@@ -66,6 +68,15 @@ function gingdev_customize_register( \WP_Customize_Manager $manager ): void {
 		)
 	);
 
+	$manager->add_control(
+		'phone_number',
+		array(
+			'label'   => __( 'Phone number' ),
+			'type'    => 'tel',
+			'section' => 'title_tagline',
+		)
+	);
+
 	$manager->selective_refresh->add_partial(
 		'footer_logo',
 		array(
@@ -88,9 +99,9 @@ function gingdev_customize_register( \WP_Customize_Manager $manager ): void {
 	);
 
 	$manager->selective_refresh->add_partial(
-		'sidebar',
+		'phone_number',
 		array(
-			'selector' => '#footer-sidebar',
+			'selector' => '.header-phone',
 		)
 	);
 }

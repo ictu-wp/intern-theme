@@ -126,9 +126,9 @@ h2 {
 
 /* Filter custom */
 
-.ts-hidden-accessible, select[name=orderby] {
+/* .ts-hidden-accessible, select[name=orderby] {
     @apply hidden;
-}
+} */
 
 .woocommerce-ordering {
     @apply h-16;
@@ -262,4 +262,32 @@ ul.customer-showcase > div > div > div > div {
 
 div.products-sale > div > div > div > div {
     @apply w-full h-96 p-6 justify-start items-start gap-7 inline-flex;
+}
+
+.user-dropdown:focus > .dropdown, .dropdown:hover {
+    @apply inline-flex;
+}
+
+.woocommerce-pagination {
+    @apply mt-2;
+}
+
+.woocommerce-pagination > ul {
+    @apply flex flex-row justify-center gap-2.5;
+}
+
+.page-numbers > li {
+    @apply w-10 h-10 px-4 py-1.5 bg-white rounded-md border border-gray-200 justify-start items-center gap-2.5 inline-flex;
+}
+
+a.page-numbers {
+    @apply text-zinc-900 text-sm font-normal leading-tight;
+}
+
+li:has(span.current) {
+    @apply border-green-500;
+}
+
+span.current {
+    @apply text-green-500 text-sm font-normal leading-tight;
 }
