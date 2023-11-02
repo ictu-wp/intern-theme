@@ -20,7 +20,9 @@
 				<div class="text-zinc-900 text-sm font-semibold leading-none">
 					<?php echo $phone; ?>
 				</div>
-				<div class="text-neutral-500 text-xs font-normal leading-none"><?php echo __( 'Order support' ); ?></div>
+				<div class="text-neutral-500 text-xs font-normal leading-none">
+					<?php echo __( 'Order support' ); ?>
+				</div>
 			</div>
 		</div>
 	<?php endif; ?>
@@ -61,6 +63,25 @@
 				<div class="text-neutral-500 text-xs font-normal leading-none">Developer</div>
 			</div>
 			<?php get_template_part( 'template-parts/user-dropdown' ); ?>
+		</div>
+		<?php get_template_part( 'template-parts/mini-cart' ); ?>
+	<?php else : ?>
+		<div class="w-48 h-9 justify-center items-center gap-2 inline-flex">
+			<div class="w-8 h-8 px-0.5 py-0.5 justify-center items-center flex">
+				<svg xmlns="http://www.w3.org/2000/svg" width="27" height="30" viewBox="0 0 27 30" fill="none">
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M20.0657 20.7517C15.9575 18.3054 10.7373 18.3054 6.62912 20.7517C6.40525 20.885 6.15994 21.0241 5.90298 21.1699C4.95284 21.7089 3.84348 22.3383 3.07002 23.0954C2.58986 23.5654 2.38517 23.9531 2.35243 24.2527C2.32643 24.4905 2.38656 24.8826 2.9874 25.4551C4.36853 26.7709 5.77196 27.5837 7.46856 27.5837H19.2262C20.9228 27.5837 22.3263 26.7709 23.7074 25.4551C24.3082 24.8826 24.3684 24.4905 24.3424 24.2527C24.3096 23.9531 24.1049 23.5654 23.6248 23.0954C22.8513 22.3383 21.742 21.7089 20.7918 21.1699C20.5349 21.0241 20.2896 20.885 20.0657 20.7517ZM21.0889 19.0332L20.5773 19.8924L21.0889 19.0332C21.244 19.1256 21.4356 19.2336 21.6525 19.356C22.6029 19.8922 24.0396 20.7027 25.0238 21.6661C25.6393 22.2686 26.2242 23.0626 26.3305 24.0353C26.4436 25.0698 25.9923 26.0406 25.087 26.9031C23.525 28.3912 21.6507 29.5837 19.2262 29.5837H7.46856C5.04415 29.5837 3.16977 28.3912 1.60784 26.9031C0.702481 26.0406 0.251197 25.0698 0.364272 24.0353C0.4706 23.0626 1.05547 22.2686 1.67103 21.6661C2.65525 20.7027 4.09193 19.8922 5.04235 19.356C5.25924 19.2336 5.4508 19.1256 5.60589 19.0332C10.3446 16.2116 16.3502 16.2116 21.0889 19.0332Z"
+						fill="#1A1A1A" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M13.3472 2.91699C10.5857 2.91699 8.34717 5.15557 8.34717 7.91699C8.34717 10.6784 10.5857 12.917 13.3472 12.917C16.1086 12.917 18.3472 10.6784 18.3472 7.91699C18.3472 5.15557 16.1086 2.91699 13.3472 2.91699ZM6.34717 7.91699C6.34717 4.051 9.48117 0.916992 13.3472 0.916992C17.2132 0.916992 20.3472 4.051 20.3472 7.91699C20.3472 11.783 17.2132 14.917 13.3472 14.917C9.48117 14.917 6.34717 11.783 6.34717 7.91699Z"
+						fill="#2A353D" />
+				</svg>
+			</div>
+			<div class="flex-col justify-center items-start gap-0.5 inline-flex">
+				<div class="text-zinc-900 text-sm font-semibold leading-none">Tài khoản</div>
+				<div class="text-neutral-500 text-xs font-normal leading-none">Đăng nhập/Đăng ký
+				</div>
+			</div>
 		</div>
 	<?php endif; ?>
 </div>

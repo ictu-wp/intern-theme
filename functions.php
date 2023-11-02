@@ -1,7 +1,7 @@
 <?php
 use BenTools\WebpackEncoreResolver\AssetPathResolver;
 
-require_once get_template_directory() . '/vendor/autoload.php';
+require get_template_directory() . '/vendor/autoload.php';
 require get_template_directory() . '/inc/custom-searchform.php';
 require get_template_directory() . '/inc/customize.php';
 require get_template_directory() . '/inc/widgets.php';
