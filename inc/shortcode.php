@@ -10,7 +10,7 @@ function logo_showcase(): string {
 	$logo_query = new WP_Query( $query );
 	ob_start();
 	?>
-	<div class="w-full h-36 px-20 justify-start items-center gap-12 inline-flex bg-white">
+	<div class="logo_showcase w-full h-36 px-20 justify-start items-center gap-12 inline-flex bg-white">
 		<?php
 		if ( $logo_query->have_posts() ) :
 			while ( $logo_query->have_posts() ) :
@@ -37,15 +37,18 @@ add_shortcode(
 			)
 		);
 
-		show_woocommerce_categories( $args['title'] );
+		show_woocommerce_categories( $args['title'], $args['per_page'] );
 	}
 );
 
 
-function show_woocommerce_categories( string $title ): void {
+function show_woocommerce_categories( string $title, int $number ): void {
 	/** @var list<WP_Term> */
 	$categories = get_categories(
-		array( 'taxonomy' => 'product_cat' )
+		array(
+			'taxonomy' => 'product_cat',
+			'number'   => $number,
+		)
 	);
 
 	?>
