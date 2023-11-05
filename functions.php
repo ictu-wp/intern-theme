@@ -8,6 +8,7 @@ require get_template_directory() . '/inc/widgets.php';
 require get_template_directory() . '/inc/custom-posttype.php';
 require get_template_directory() . '/inc/shortcode.php';
 require get_template_directory() . '/inc/woocommerce.php';
+require get_template_directory() . '/inc/auth.php';
 
 /**
  * @see https://woocommerce.com/document/disable-the-default-stylesheet/
@@ -83,7 +84,7 @@ add_action(
 
 		$enqueue( 'main' );
 
-		wp_enqueue_style( 'fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css' );
+		// wp_enqueue_style( 'fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css' );
 		wp_enqueue_style( 'font', 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap' );
 	}
 );

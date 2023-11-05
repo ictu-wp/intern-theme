@@ -52,15 +52,21 @@
 			</div>
 		</div>
 	</div>
-	<?php if ( is_user_logged_in() ) : ?>
+	<?php
+	if ( is_user_logged_in() ) :
+		$user_id = get_current_user_id();
+		?>
 		<div class="user-dropdown h-10 justify-center items-center gap-2 flex relative" tabindex="-1">
-			<img class="w-10 h-10 rounded-full border border-gray-200"
-				src="<?php echo get_avatar_url( get_current_user_id() ); ?>" />
+			<img class="w-10 h-10 rounded-full border border-gray-200" src="<?php echo get_avatar_url( $user_id ); ?>" />
 			<div class="flex-col justify-center items-start gap-0.5 inline-flex">
 				<div class="text-zinc-900 text-sm font-semibold leading-none">
-					<?php echo get_current_user(); ?>
+					<?php echo get_userdata( $user_id )->display_name; ?>
 				</div>
-				<div class="text-neutral-500 text-xs font-normal leading-none">Developer</div>
+				<?php if ( false != $phone = get_user_meta( $user_id, 'phone', true ) ) : ?>
+					<div class="text-neutral-500 text-xs font-normal leading-none">
+						<?php echo $phone; ?>
+					</div>
+				<?php endif; ?>
 			</div>
 			<?php get_template_part( 'template-parts/user-dropdown' ); ?>
 		</div>
@@ -77,11 +83,12 @@
 						fill="#2A353D" />
 				</svg>
 			</div>
-			<div class="flex-col justify-center items-start gap-0.5 inline-flex">
+			<a href="#auth" rel="modal:open" class="flex-col justify-center items-start gap-0.5 inline-flex">
 				<div class="text-zinc-900 text-sm font-semibold leading-none">Tài khoản</div>
 				<div class="text-neutral-500 text-xs font-normal leading-none">Đăng nhập/Đăng ký
 				</div>
-			</div>
+			</a>
 		</div>
+		<?php get_template_part( 'template-parts/auth' ); ?>
 	<?php endif; ?>
 </div>

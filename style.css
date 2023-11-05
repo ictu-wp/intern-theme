@@ -295,3 +295,11 @@ span.current {
 .mini-cart-modal {
     @apply hidden;
 }
+
+.modal {
+    @apply hidden border-none rounded-none p-0;
+}
+
+.modal a.close-modal {
+    @apply hidden;
+}

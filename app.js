@@ -1,8 +1,11 @@
-import './style.css'
 import 'slick-carousel';
-import 'jquery-countdown'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+import 'jquery-countdown';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import 'jquery-form';
+import 'jquery-modal/jquery.modal';
+import 'jquery-modal/jquery.modal.css'
+import './style.css'
 
 window.$ = window.jQuery = require('jquery')
 
@@ -63,4 +66,25 @@ jQuery(function () {
       }
     });
   });
-})
+
+  $(document).on('submit', '#login, #register', function (event) {
+    const $form = $(this);
+    event.preventDefault();
+
+    $form.ajaxSubmit({
+      success: function (response) {
+        if (response.success) {
+          window.location.reload();
+          return;
+        }
+
+        $form.replaceWith(response.data);
+      },
+    });
+  });
+
+  $(document).on('click', '.auth-toggle', function () {
+    $('#login-area').toggle();
+    $('#register-area').toggle();
+  })
+});
