@@ -45,7 +45,7 @@
 				<?php echo __( 'Cart' ); ?>
 			</div>
 			<div class="text-neutral-500 text-xs font-normal leading-none">
-				<a href="#" id="minicart-open">
+				<a id="cart-count" href="#mini-cart" rel="modal:open">
 					<?php echo WC()->cart->get_cart_contents_count(); ?>
 					<?php echo __( 'items' ); ?>
 				</a>
@@ -70,7 +70,9 @@
 			</div>
 			<?php get_template_part( 'template-parts/user-dropdown' ); ?>
 		</div>
-		<?php get_template_part( 'template-parts/mini-cart' ); ?>
+		<div id="mini-cart" class="modal">
+			<?php get_template_part( 'template-parts/mini-cart' ); ?>
+		</div>
 	<?php else : ?>
 		<div class="w-48 h-9 justify-center items-center gap-2 inline-flex">
 			<div class="w-8 h-8 px-0.5 py-0.5 justify-center items-center flex">
@@ -84,8 +86,11 @@
 				</svg>
 			</div>
 			<a href="#auth" rel="modal:open" class="flex-col justify-center items-start gap-0.5 inline-flex">
-				<div class="text-zinc-900 text-sm font-semibold leading-none">Tài khoản</div>
-				<div class="text-neutral-500 text-xs font-normal leading-none">Đăng nhập/Đăng ký
+				<div class="text-zinc-900 text-sm font-semibold leading-none">
+					<?php echo __( 'Account' ); ?>
+				</div>
+				<div class="text-neutral-500 text-xs font-normal leading-none">
+					<?php echo __( 'Login/Register' ); ?>
 				</div>
 			</a>
 		</div>

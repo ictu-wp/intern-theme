@@ -292,10 +292,6 @@ span.current {
     @apply w-20 h-20 rounded-md;
 }
 
-.mini-cart-modal {
-    @apply hidden;
-}
-
 .modal {
     @apply hidden border-none rounded-none p-0;
 }

@@ -84,8 +84,22 @@ add_action(
 
 		$enqueue( 'main' );
 
-		// wp_enqueue_style( 'fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css' );
+		wp_enqueue_style( 'fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css' );
 		wp_enqueue_style( 'font', 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap' );
+	}
+);
+
+/**
+ * Prints scripts or data in the head tag on the front end.
+ */
+add_action(
+	'wp_head',
+	function (): void {
+		?>
+	<script>
+		const admin_ajax = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
+	</script>
+		<?php
 	}
 );
 

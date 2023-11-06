@@ -3,7 +3,7 @@ import 'jquery-countdown';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import 'jquery-form';
-import 'jquery-modal/jquery.modal';
+import 'jquery-modal';
 import 'jquery-modal/jquery.modal.css'
 import './style.css'
 
@@ -41,32 +41,6 @@ jQuery(function () {
     $(this).hide();
   });
 
-  $(document).on('click', '#minicart-close', function () {
-    $('.mini-cart-modal').hide();
-  })
-
-  $(document).on('click', '#minicart-open', function () {
-    $('.mini-cart-modal').show();
-  })
-
-  $(document).on('click', '.remove-item', function (e) {
-    e.preventDefault();
-    $.ajax({
-      url: $(this).attr('href'),
-      complete: function (e, _xhr, _options) {
-        if (e.status === 200) {
-          const selector = ['#minicart', '#minicart-open'];
-          const $dom = $($.parseHTML(e.responseText));
-          selector.forEach(function (id) {
-            $(id).replaceWith($dom.find(id));
-          })
-        } else {
-          console.log("error");
-        }
-      }
-    });
-  });
-
   $(document).on('submit', '#login, #register', function (event) {
     const $form = $(this);
     event.preventDefault();
@@ -83,8 +57,21 @@ jQuery(function () {
     });
   });
 
+  // Maybe simplify it?
   $(document).on('click', '.auth-toggle', function () {
     $('#login-area').toggle();
     $('#register-area').toggle();
-  })
+  });
+
+  $(document).on('click', '.remove-item', function (e) {
+    e.preventDefault();
+    $.get($(this).attr('href'), function () {
+      $.post(admin_ajax, {
+        action: 'minicart'
+      }, function (response) {
+        $('#cart').replaceWith(response.data.html);
+        $('#cart-count').text(response.data.count);
+      });
+    });
+  });
 });

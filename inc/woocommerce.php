@@ -22,3 +22,20 @@ add_filter(
 	10,
 	1
 );
+
+/**
+ * Fires authenticated Ajax actions for logged-in users.
+ */
+add_action(
+	'wp_ajax_minicart',
+	function (): void {
+		ob_start();
+		get_template_part( 'template-parts/mini-cart' );
+		wp_send_json_success(
+			array(
+				'html'  => ob_get_clean(),
+				'count' => WC()->cart->get_cart_contents_count(),
+			)
+		);
+	}
+);
