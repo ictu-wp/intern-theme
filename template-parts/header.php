@@ -68,7 +68,10 @@
 					</div>
 				<?php endif; ?>
 			</div>
-			<?php get_template_part( 'template-parts/user-dropdown' ); ?>
+			<div
+				class="dropdown hidden top-14 -left-8 absolute z-20 py-2 bg-white w-fit rounded-md shadow border border-gray-200 ">
+				<?php get_template_part( 'template-parts/user-dropdown' ); ?>
+			</div>
 		</div>
 		<div id="mini-cart" class="modal">
 			<?php get_template_part( 'template-parts/mini-cart' ); ?>

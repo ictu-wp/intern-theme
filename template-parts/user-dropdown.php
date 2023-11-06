@@ -1,6 +1,6 @@
-<div
-	class="dropdown hidden absolute top-14 -left-8 w-52 h-36 rounded-md shadow border border-gray-200 flex-col justify-start items-start">
-	<div class="self-stretch px-4 py-3 bg-white border-b border-gray-200 justify-start items-center gap-2 inline-flex">
+<div class="w-56 flex-col justify-start items-start">
+	<div
+		class="w-full self-stretch px-4 py-3 bg-white border-b border-gray-200 justify-start items-center gap-2 inline-flex">
 		<div class="w-6 h-6 px-0.5 py-px justify-center items-center flex">
 			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="22" viewBox="0 0 20 22" fill="none">
 				<path fill-rule="evenodd" clip-rule="evenodd"
@@ -15,7 +15,8 @@
 			<?php echo __( 'Account information' ); ?>
 		</a>
 	</div>
-	<div class="self-stretch px-4 py-3 bg-white border-b border-gray-200 justify-start items-center gap-2 inline-flex">
+	<div
+		class="w-full self-stretch px-4 py-3 bg-white border-b border-gray-200 justify-start items-center gap-2 inline-flex">
 		<div class="w-6 h-6 px-0.5 py-px justify-center items-center flex">
 			<svg xmlns="http://www.w3.org/2000/svg" width="22" height="23" viewBox="0 0 22 23" fill="none">
 				<path fill-rule="evenodd" clip-rule="evenodd"
@@ -33,7 +34,7 @@
 			<?php echo __( 'Cart' ); ?>
 		</a>
 	</div>
-	<div class="self-stretch px-4 py-3 bg-white border-b border-gray-200 justify-start items-center gap-2 inline-flex">
+	<div class="w-full self-stretch px-4 py-3 bg-white justify-start items-center gap-2 inline-flex">
 		<div class="w-6 h-6 pl-1 pr-0.5 py-0.5 justify-center items-center flex">
 			<svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none">
 				<path fill-rule="evenodd" clip-rule="evenodd"

@@ -134,22 +134,6 @@ h2 {
     @apply hidden;
 }
 
-.ts-control {
-    @apply float-right max-w-sm relative;
-}
-
-.ts-dropdown-content {
-    @apply absolute right-[80px] mt-12 bg-white border border-gray-200 rounded-md z-10;
-}
-
-.ts-dropdown-content > div:not(:last-child) {
-    @apply border-b border-gray-200;
-}
-
-.ts-dropdown-content > .option {
-    @apply p-4;
-}
-
 /* Account custom */
 
 .woocommerce:has(nav.woocommerce-MyAccount-navigation) {
@@ -298,4 +282,12 @@ span.current {
 
 .modal a.close-modal {
     @apply hidden;
+}
+
+.order-dropdown:hover > .dropdown-items {
+    @apply block;
+}
+
+.dropdown-items > ul > li:not(:last-child) {
+    @apply border-b border-gray-200;
 }
