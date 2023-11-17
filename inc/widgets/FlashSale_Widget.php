@@ -42,8 +42,8 @@ class FlashSale_Widget extends WP_Widget {
 		echo $args['before_widget'];
 
 		?>
-		<div id="countdown" class="bg-white px-[89px] py-[50px] flex flex-col gap-6">
-			<div class="w-full h-11 justify-start items-center gap-96 inline-flex">
+		<div id="countdown" class="bg-white px-2 md:px-[89px] py-[50px] flex flex-col gap-6">
+			<div class="w-full h-11 justify-start items-center inline-flex">
 				<div class="grow shrink basis-0 h-11 justify-start items-start gap-2 flex">
 					<div class="justify-start items-start flex">
 						<div class="text-green-500 text-3xl font-semibold leading-10">F</div>
@@ -58,7 +58,7 @@ class FlashSale_Widget extends WP_Widget {
 					</div>
 				</div>
 				<div class="justify-start items-center gap-2 flex">
-					<div class="text-zinc-900 text-base font-semibold leading-tight">Kết thúc sau:</div>
+					<div class="hidden md:block text-zinc-900 text-base font-semibold leading-tight"><?php echo __( 'End after' ); ?>:</div>
 					<div class="w-10 h-10 p-1 bg-green-100 rounded-md flex-col justify-center items-center gap-2.5 inline-flex">
 						<div class="hour text-green-500 text-lg font-semibold leading-snug"></div>
 					</div>

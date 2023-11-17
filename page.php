@@ -1,5 +1,4 @@
-<?php get_header(); ?>
-<main class="my px-[80px]">
-	<?php the_content(); ?>
-</main>
-<?php get_footer(); ?>
+<?php
+get_header();
+the_content();
+get_footer();

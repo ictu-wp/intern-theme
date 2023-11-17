@@ -3,7 +3,10 @@ const Encore = require('@symfony/webpack-encore');
 Encore
     .setOutputPath('build')
     .setPublicPath('/build')
-    .addEntry('main', './app.js')
+    .addEntries({
+      main: './app.js',
+      address: './address.js'
+    })
     .enableSingleRuntimeChunk()
     .enableVersioning(Encore.isProduction())
     .enablePostCssLoader()

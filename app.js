@@ -10,11 +10,31 @@ import './style.css'
 window.$ = window.jQuery = require('jquery')
 
 jQuery(function () {
+  $(window).on('scroll', function () {
+    const $header = $('#header');
+
+    if ($(this).scrollTop() < 320) {
+      $header.removeClass('sticky');
+
+      return;
+    }
+
+    $header.addClass('sticky');
+  });
+
   $('.multiple-items').each(function () {
     $(this).slick({
       infinite: false,
       slidesPerRow: 4,
       centerMode: true,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesPerRow: 2,
+          }
+        }
+      ]
     });
   });
 
@@ -22,6 +42,21 @@ jQuery(function () {
     slidesPerRow: 2,
     nextArrow: $('.next-customer'),
     prevArrow: $('.prev-customer'),
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesPerRow: 1,
+        }
+      }
+    ]
+  })
+
+  $('ul.products').slick({
+    slidesPerRow: 3,
+    nextArrow: $('.next-product'),
+    prevArrow: $('.prev-product'),
     arrows: true,
   })
 
@@ -31,6 +66,20 @@ jQuery(function () {
     centerMode: true,
     autoplay: true,
     autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 640,
+        settings: {
+          slidesPerRow: 1,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesPerRow: 2,
+        }
+      }
+    ]
   });
 
   $('#countdown').countdown($('#end_at').val(), function (e) {
@@ -69,9 +118,46 @@ jQuery(function () {
       $.post(admin_ajax, {
         action: 'minicart'
       }, function (response) {
-        $('#cart').replaceWith(response.data.html);
+        if (response.data.count == 0) {
+          window.location.reload();
+
+          return;
+        }
+
+        $('.product-items').replaceWith(response.data.items);
+        $('.total-amount').replaceWith(response.data.amount);
         $('#cart-count').text(response.data.count);
       });
     });
+  });
+
+  $('#buynow').on('click', function () {
+    $.post(admin_ajax, {
+      'action': 'buynow',
+      'id': $(this).attr('data-id'),
+    }, function (response) {
+      window.location.href = response.data;
+    });
+  });
+
+  $(document).on('click', '.minus, .plus', function () {
+    const q = $(this).closest('.quantity').find('.qty');
+
+    if ($(this).is('.minus')) {
+      if (q.val() < 2) {
+        return;
+      }
+
+      q.val(q.val() - 1);
+
+      return;
+    }
+
+    q.val(Number(q.val()) + 1);
+  });
+
+  // https://rudrastyh.com/woocommerce/remove-update-cart-button.html
+  $('.woocommerce').on('change', 'input.qty', function () {
+    $("[name='update_cart']").trigger('click');
   });
 });

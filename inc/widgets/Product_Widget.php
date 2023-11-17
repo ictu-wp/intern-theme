@@ -45,7 +45,7 @@ class Product_Widget extends WP_Widget {
 
 		echo $args['before_widget'];
 		if ( $products->have_posts() ) : ?>
-			<div class="px-[80px] py-12 bg-white flex flex-col gap-4">
+			<div class="px-2 md:px-[80px] py-12 bg-white flex flex-col gap-4">
 				<div class="w-96 text-zinc-900 text-2xl font-semibold leading-7">
 					<?php echo $title ?: __( 'All Products' ); ?>
 				</div>
@@ -58,9 +58,9 @@ class Product_Widget extends WP_Widget {
 						?>
 						<li class="flex flex-col gap-2">
 							<?php if ( $thumbnail ) : ?>
-								<img src="<?php echo $thumbnail; ?>" alt="Product" class="w-64 h-64 rounded-md">
+								<img src="<?php echo $thumbnail; ?>" alt="Product" class="w-32 h-32 md:w-64 md:h-64 rounded-md">
 							<?php endif; ?>
-							<div class="w-64 text-zinc-900 text-base font-normal leading-snug">
+							<div class="w-32 md:w-64 text-zinc-900 text-base font-normal leading-snug">
 								<a href="<?php echo $product->get_permalink(); ?>">
 									<?php echo $product->get_title(); ?>
 								</a>

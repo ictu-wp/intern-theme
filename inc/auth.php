@@ -35,11 +35,28 @@ add_action(
 		if ( '' !== $phone = $data['user_phone'] ) {
 			if ( ! preg_match( '/(84|0[3|5|7|8|9])+([0-9]{8})\b/', $phone ) ) {
 				$error->add( 'invalid_phonenumber', 'Your phone number is not valid.' );
+
+				goto password_step;
+			}
+
+			if ( get_users(
+				array(
+					'meta_key'   => 'billing_phone',
+					'meta_value' => $data['user_phone'],
+					'number'     => 1,
+				)
+			) ) {
+				$error->add( 'duplicate_phonenumber', 'Your phone already exist.' );
+
+				goto last_step;
 			}
 		}
 
+		password_step:
 		if ( $data['user_repassword'] !== $data['user_password'] ) {
 			$error->add( 'wrong_repassword', 'Re-entered password does not match.' );
+
+			goto last_step;
 		}
 
 		$id = wc_create_new_customer(
@@ -54,6 +71,7 @@ add_action(
 			$error->merge_from( $id );
 		}
 
+		last_step:
 		if ( count( $error->errors ) > 0 ) {
 			ob_start();
 			get_template_part( 'template-parts/auth', 'register', array( 'error' => $error ) );
@@ -61,8 +79,8 @@ add_action(
 			die();
 		}
 
-		add_user_meta( $id, 'phone', $data['user_phone'] );
-
+		add_user_meta( $id, 'billing_phone', $data['user_phone'], true );
+		add_user_meta( $id, 'billing_email', $data['user_login'] );
 		wp_signon( $data );
 		wp_send_json_success();
 		die();

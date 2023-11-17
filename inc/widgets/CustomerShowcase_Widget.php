@@ -47,9 +47,9 @@ class CustomerShowcase_Widget extends WP_Widget {
 
 		if ( $customers->have_posts() ) :
 			?>
-			<div class="px-[89px] py-[50px] flex flex-col gap-4 bg-gray-200">
+			<div class="px-2 md:px-[89px] py-[50px] flex flex-col gap-4 bg-gray-200">
 				<div class="w-full h-10 justify-start items-center inline-flex">
-					<div class="grow shrink basis-0 text-zinc-900 text-2xl font-semibold leading-7">
+					<div class="grow shrink basis-0 text-zinc-900 text-sm md:text-2xl font-semibold leading-7">
 						<?php echo $instance['title']; ?>
 					</div>
 					<div class="justify-start items-start gap-4 flex">
@@ -72,7 +72,7 @@ class CustomerShowcase_Widget extends WP_Widget {
 						$roles  = get_the_term_list( $post->ID, 'customer_role', sep: ' & ' );
 						?>
 						<div
-							class="p-8 bg-white rounded-md border border-gray-200 flex-col justify-start items-start gap-6 inline-flex">
+							class="p-8 bg-white rounded-md border border-gray-200 flex-col justify-start items-start gap-6 inline-flex flex-wrap">
 							<div class="self-stretch justify-start items-center gap-5 inline-flex">
 								<?php if ( $avatar ) : ?>
 									<img class="w-24 h-24 rounded-full border border-gray-200" src="<?php echo $avatar; ?>" />

@@ -7,6 +7,7 @@ require __DIR__ . '/widgets/Product_Widget.php';
 require __DIR__ . '/widgets/CustomerShowcase_Widget.php';
 require __DIR__ . '/widgets/LogoShowcase_Widget.php';
 require __DIR__ . '/widgets/FlashSale_Widget.php';
+require __DIR__ . '/widgets/BadgeProduct_Widget.php';
 
 /**
  * Fires after all default WordPress widgets have been registered.
@@ -46,6 +47,14 @@ add_action(
 				'after_widget'  => '</div>',
 			)
 		);
+		register_sidebar(
+			array(
+				'name'          => __( 'Product Right Side' ),
+				'id'            => 'product-right',
+				'before_widget' => '<div id="%1$s" class="%2$s flex flex-col gap-2">',
+				'after_widget'  => '</div>',
+			)
+		);
 
 		register_widget( SupportPhone_Widget::class );
 		register_widget( BaseLocation_Widget::class );
@@ -54,5 +63,6 @@ add_action(
 		register_widget( CustomerShowcase_Widget::class );
 		register_widget( LogoShowcase_Widget::class );
 		register_widget( FlashSale_Widget::class );
+		register_widget( BadgeProduct_Widget::class );
 	}
 );

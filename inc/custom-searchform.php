@@ -13,7 +13,7 @@ add_filter(
 		ob_start();
 		?>
 	<form method="get" action="<?php echo wc_get_page_permalink( 'shop' ); ?>"
-		class="w-80 h-11 pl-4 pr-1 py-1 rounded-md border border-gray-200 justify-start items-center gap-2.5 flex">
+		class="hidden md:flex md:w-80 lg:w-96 h-11 pl-4 pr-1 py-1 rounded-md border border-gray-200 justify-start items-center gap-2.5">
 		<input name="s"
 			class="h-full outline-none grow shrink basis-0 text-stone-300 text-sm font-normal leading-tight" />
 		<button type="submit"

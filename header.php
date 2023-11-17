@@ -7,15 +7,18 @@
 	<?php wp_head(); ?>
 </head>
 
-<?php get_template_part( 'template-parts/header' ); ?>
-
-<?php
+<div id="header">
+	<?php get_template_part( 'template-parts/header' ); ?>
+	<?php
 	wp_nav_menu(
 		array(
 			'theme_location' => 'main-menu',
 			'container'      => 'ul',
-			'menu_class'     => 'w-full h-14 px-20 py-3 bg-white border-t border-b border-gray-200 justify-start items-center gap-8 inline-flex',
+			'menu_class'     => 'ging-menu',
+			'walker'         => new Ging_Walker_Nav_Menu(),
 		)
 	);
 	?>
+</div>
+
 <body <?php body_class(); ?>>

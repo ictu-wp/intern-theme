@@ -9,6 +9,7 @@ require get_template_directory() . '/inc/custom-posttype.php';
 require get_template_directory() . '/inc/shortcode.php';
 require get_template_directory() . '/inc/woocommerce.php';
 require get_template_directory() . '/inc/auth.php';
+require get_template_directory() . '/inc/menu.php';
 
 /**
  * @see https://woocommerce.com/document/disable-the-default-stylesheet/
@@ -66,28 +67,32 @@ add_action(
 add_action(
 	'wp_enqueue_scripts',
 	function (): void {
-		$assetPathResolver = new AssetPathResolver( get_template_directory() . '/build' );
-
-		$resolve = function ( string $uri ): string {
-			return ( str_starts_with( $uri, '/' ) ? get_stylesheet_directory_uri() : '' ) . $uri;
-		};
-
-		$enqueue = function ( string $entrypoint ) use ( $assetPathResolver, $resolve ) {
-			foreach ( $assetPathResolver->getWebpackCssFiles( $entrypoint ) as $css ) {
-				wp_enqueue_style( wp_unique_id( $entrypoint ), $resolve( $css ) );
-			}
-
-			foreach ( $assetPathResolver->getWebpackJsFiles( $entrypoint ) as $js ) {
-				wp_enqueue_script( wp_unique_id( $entrypoint ), $resolve( $js ) );
-			}
-		};
-
-		$enqueue( 'main' );
-
+		enqueue( 'main' );
 		wp_enqueue_style( 'fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css' );
 		wp_enqueue_style( 'font', 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap' );
+		wp_dequeue_style( 'woo-variation-swatches' );
+		wp_dequeue_script( 'wc-checkout' );
 	}
 );
+
+/**
+ * @author gingdev <thanh1101dev@gmail.com>
+ */
+function enqueue( string $entrypoint ) {
+	$assetPathResolver = new AssetPathResolver( get_template_directory() . '/build' );
+
+	$resolve = function ( string $uri ): string {
+		return ( str_starts_with( $uri, '/' ) ? get_stylesheet_directory_uri() : '' ) . $uri;
+	};
+
+	foreach ( $assetPathResolver->getWebpackCssFiles( $entrypoint ) as $css ) {
+		wp_enqueue_style( md5( $css ), $resolve( $css ) );
+	}
+
+	foreach ( $assetPathResolver->getWebpackJsFiles( $entrypoint ) as $js ) {
+		wp_enqueue_script( md5( $js ), $resolve( $js ) );
+	}
+}
 
 /**
  * Prints scripts or data in the head tag on the front end.
@@ -107,3 +112,16 @@ add_action(
 add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
 // Disables the block editor from managing widgets.
 add_filter( 'use_widgets_block_editor', '__return_false' );
+
+/**
+ * Fires after a user is logged out.
+ *
+ * @param int $user_id ID of the user that was logged out.
+ */
+add_action(
+	'wp_logout',
+	function ( int $user_id ): void {
+		wp_redirect( home_url() );
+		die();
+	}
+);

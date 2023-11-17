@@ -1,16 +1,17 @@
 <div class="w-full h-full bg-black flex-col justify-start items-center gap-8 inline-flex px-[80px] py-6">
-	<div class="self-stretch justify-start items-start gap-48 inline-flex">
-		<div id="footer_logo">
+	<div class="self-stretch justify-start items-start inline-flex flex-wrap">
+		<div id="footer_logo" class="grow">
 			<?php if ( false !== $logo = get_theme_mod( 'footer_logo' ) ) : ?>
-				<img class="w-60 h-12" src="<?php echo $logo; ?>" />
+				<img class="w-full md:w-60 h-auto" src="<?php echo $logo; ?>" />
 			<?php endif; ?>
 		</div>
 		<div class="h-10 justify-between items-center flex">
 			<?php dynamic_sidebar( 'footer-columns-1' ); ?>
 		</div>
 	</div>
-	<div class="self-stretch justify-between items-start inline-flex">
-		<div class="w-96 flex-col justify-center items-start gap-6 inline-flex text-white">
+	<div class="border-t border-neutral-200 w-full opacity-20"></div>
+	<div class="self-stretch justify-between items-start inline-flex flex-wrap gap-6 md:gap-0">
+		<div class="w-full md:w-96 flex-col justify-center items-start gap-6 inline-flex text-white">
 			<?php if ( is_active_sidebar( 'footer-sidebar' ) ) : ?>
 				<?php dynamic_sidebar( 'footer-sidebar' ); ?>
 			<?php endif; ?>
@@ -33,9 +34,10 @@
 		</div>
 		<?php dynamic_sidebar( 'footer-columns-2' ); ?>
 	</div>
-	<div class="self-stretch justify-start items-center gap-60 inline-flex">
+	<div class="border-t border-neutral-200 w-full opacity-20"></div>
+	<div class="self-stretch justify-start items-center inline-flex flex-wrap">
 		<div class="grow shrink basis-0 h-11 justify-start items-center gap-4 flex"></div>
-		<div class="text-neutral-500 text-sm font-normal leading-tight copyright">
+		<div class="w-fit text-neutral-500 text-sm font-normal leading-tight copyright">
 			Copyright ©
 			<?php echo date( 'Y' ); ?>
 			<?php echo get_theme_mod( 'copyright' ) ?: 'gingdev'; ?>

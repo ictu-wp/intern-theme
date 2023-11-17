@@ -1,8 +1,13 @@
-<div class="w-full h-20 px-20 bg-white justify-between items-center inline-flex">
-	<?php the_custom_logo(); ?>
+<div class="w-full h-20 px-4 md:px-10 lg:px-20 bg-white justify-between items-center inline-flex">
+	<div class="mobile-navigation w-20 md:hidden inline-flex items-center justify-center">
+		<i class="fa-solid fa-list"></i>
+	</div>
+	<div class="basis-48 shrink-0 grow-0 h-full inline-flex justify-center items-center">
+		<?php the_custom_logo(); ?>
+	</div>
 	<?php get_search_form(); ?>
 	<?php if ( false !== $phone = get_theme_mod( 'phone_number' ) ) : ?>
-		<div class="header-phone justify-center items-center gap-2 flex">
+		<div class="header-phone hidden lg:flex justify-center items-center gap-2">
 			<div class="w-8 h-8 px-0.5 py-1 justify-center items-center flex">
 				<svg xmlns="http://www.w3.org/2000/svg" width="29" height="26" viewBox="0 0 29 26" fill="none">
 					<path fill-rule="evenodd" clip-rule="evenodd"
@@ -40,13 +45,15 @@
 					fill="#1A1A1A" />
 			</svg>
 		</div>
-		<div class="flex-col justify-center items-start gap-0.5 inline-flex">
+		<div class="hidden flex-col justify-center items-start gap-0.5 md:inline-flex">
 			<div class="text-zinc-900 text-sm font-semibold leading-none">
 				<?php echo __( 'Cart' ); ?>
 			</div>
 			<div class="text-neutral-500 text-xs font-normal leading-none">
-				<a id="cart-count" href="#mini-cart" rel="modal:open">
-					<?php echo WC()->cart->get_cart_contents_count(); ?>
+				<a href="#mini-cart" rel="modal:open">
+					<span id="cart-count">
+						<?php echo WC()->cart->get_cart_contents_count(); ?>
+					</span>
 					<?php echo __( 'items' ); ?>
 				</a>
 			</div>
@@ -56,20 +63,20 @@
 	if ( is_user_logged_in() ) :
 		$user_id = get_current_user_id();
 		?>
-		<div class="user-dropdown h-10 justify-center items-center gap-2 flex relative" tabindex="-1">
+		<div class="user-dropdown flex h-10 justify-center items-center gap-2 relative" tabindex="-1">
 			<img class="w-10 h-10 rounded-full border border-gray-200" src="<?php echo get_avatar_url( $user_id ); ?>" />
-			<div class="flex-col justify-center items-start gap-0.5 inline-flex">
+			<div class="hidden md:inline-flex flex-col justify-center items-start gap-0.5">
 				<div class="text-zinc-900 text-sm font-semibold leading-none">
 					<?php echo get_userdata( $user_id )->display_name; ?>
 				</div>
-				<?php if ( false != $phone = get_user_meta( $user_id, 'phone', true ) ) : ?>
+				<?php if ( false != $phone = get_user_meta( $user_id, 'billing_phone', true ) ) : ?>
 					<div class="text-neutral-500 text-xs font-normal leading-none">
 						<?php echo $phone; ?>
 					</div>
 				<?php endif; ?>
 			</div>
 			<div
-				class="dropdown hidden top-14 -left-8 absolute z-20 py-2 bg-white w-fit rounded-md shadow border border-gray-200 ">
+				class="dropdown hidden top-14 right-0 absolute z-20 py-2 bg-white w-fit rounded-md shadow border border-gray-200">
 				<?php get_template_part( 'template-parts/user-dropdown' ); ?>
 			</div>
 		</div>
