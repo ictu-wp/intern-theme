@@ -1,4 +1,4 @@
-<div class="w-full h-full bg-black flex-col justify-start items-center gap-8 inline-flex px-[80px] py-6">
+<div class="w-full h-full bg-black flex-col justify-start items-center gap-8 inline-flex px-5 md:px-10 lg:px-20 py-6">
 	<div class="self-stretch justify-start items-start inline-flex flex-wrap">
 		<div id="footer_logo" class="grow">
 			<?php if ( false !== $logo = get_theme_mod( 'footer_logo' ) ) : ?>

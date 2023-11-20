@@ -255,7 +255,7 @@ del, ins {
     all: unset;
 }
 
-ins > span {
+.product-price > span > bdi, ins > span {
     @apply text-green-500 font-bold;
 }
 

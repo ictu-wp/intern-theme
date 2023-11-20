@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 
 function _hide( string $haystack ): string {
 	$parts = explode( '@', $haystack );
-	$len = min( strlen( $parts[0] ), 3 );
+	$len   = min( strlen( $parts[0] ), 3 );
 
 	return substr( $parts[0], 0, -$len ) . str_repeat( '*', $len ) . ( count( $parts ) > 1 ? '@' . $parts[1] : '' );
 }

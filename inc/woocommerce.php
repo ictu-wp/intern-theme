@@ -219,3 +219,4 @@ remove_action( 'woocommerce_before_checkout_form_cart_notices', 'woocommerce_out
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_output_all_notices', 10 );
 remove_action( 'woocommerce_before_cart', 'woocommerce_output_all_notices', 10 );
 remove_action( 'woocommerce_order_details_after_order_table', 'woocommerce_order_again_button' );
+// remove_action( 'woocommerce_account_view-order_endpoint', 'woocommerce_account_view_order' );

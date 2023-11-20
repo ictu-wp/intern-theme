@@ -53,6 +53,7 @@ class Product_Widget extends WP_Widget {
 					<?php
 					while ( $products->have_posts() ) {
 						$products->the_post();
+
 						wc_get_template_part( 'content', 'product' );
 					}
 					wp_reset_postdata();

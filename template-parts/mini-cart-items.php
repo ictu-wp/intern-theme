@@ -11,7 +11,7 @@
 					<div class="grow shrink basis-0 text-zinc-900 text-base font-normal leading-snug">
 						<?php echo $product->get_name(); ?>
 					</div>
-					<div class="text-right text-zinc-900 text-sm font-semibold leading-none">
+					<div class="product-price text-right text-zinc-900 text-sm font-semibold leading-none">
 						<?php echo $product->get_price_html(); ?>
 					</div>
 				</div>
