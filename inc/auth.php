@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Fires non-authenticated Ajax actions for logged-out users.
  */
@@ -15,11 +14,9 @@ add_action(
 			ob_start();
 			get_template_part( 'template-parts/auth', 'login', array( 'error' => $user ) );
 			wp_send_json_error( ob_get_clean() );
-			die();
 		}
 
 		wp_send_json_success();
-		die();
 	}
 );
 
@@ -76,26 +73,24 @@ add_action(
 			ob_start();
 			get_template_part( 'template-parts/auth', 'register', array( 'error' => $error ) );
 			wp_send_json_error( ob_get_clean() );
-			die();
 		}
 
 		add_user_meta( $id, 'billing_phone', $data['user_phone'], true );
 		add_user_meta( $id, 'billing_email', $data['user_login'] );
 		wp_signon( $data );
 		wp_send_json_success();
-		die();
 	}
 );
 
 /**
  * @return array{
- *  user_name: string,
- *  user_phone: string,
+ *  user_name:string,
+ *  user_phone:string,
  *  user_login:string,
  *  user_password:string,
  *  user_repassword:string,
  *  remember:bool
- * } Returns user input.
+ * }
  */
 function get_user_postdata() {
 	return wp_parse_args(

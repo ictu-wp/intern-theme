@@ -22,7 +22,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 <h1 class="text-zinc-900 text-3xl font-semibold leading-10 mb-4">
 	<?php echo __( 'Your cart' ); ?>
 </h1>
-<div class="flex flex-row gap-4">
+<div class="flex flex-wrap md:flex-nowrap flex-row gap-4">
 	<form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 		<?php do_action( 'woocommerce_before_cart_table' ); ?>
 

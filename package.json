@@ -11,6 +11,7 @@
         "jquery-cascading-dropdown": "^1.2.9",
         "jquery-countdown": "^2.2.0",
         "jquery-form": "^4.3.0",
+        "jquery-mobile": "^1.5.0-alpha.1",
         "jquery-modal": "^0.9.2",
         "jquery-ui": "^1.13.2",
         "postcss": "^8.4.31",

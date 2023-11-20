@@ -31,8 +31,8 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'w-full flex-wrap md:flex-nowrap flex flex-row gap-4 relative mb-6', $product ); ?>>
-	<div class="relative w-full md:basis-1/2 grow-0 shrink-0">
+<div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'relative w-full md:flex flex-wrap lg:flex-nowrap flex-row gap-4', $product ); ?>>
+	<div class="w-full lg:w-1/3 grow-0 shrink-0">
 		<?php
 		/**
 		 * Hook: woocommerce_before_single_product_summary.
@@ -43,32 +43,30 @@ if ( post_password_required() ) {
 		do_action( 'woocommerce_before_single_product_summary' );
 		?>
 	</div>
-	<div class="flex flex-row gap-4">
-		<div class="w-full">
-			<?php
-			/**
-			 * Hook: woocommerce_single_product_summary.
-			 *
-			 * @hooked woocommerce_template_single_title - 5
-			 * @hooked woocommerce_template_single_rating - 10
-			 * @hooked woocommerce_template_single_price - 10
-			 * @hooked woocommerce_template_single_excerpt - 20
-			 * @hooked woocommerce_template_single_add_to_cart - 30
-			 * @hooked woocommerce_template_single_meta - 40
-			 * @hooked woocommerce_template_single_sharing - 50
-			 * @hooked WC_Structured_Data::generate_product_data() - 60
-			 */
-			do_action( 'woocommerce_single_product_summary' );
-			?>
-		</div>
-		<div class="hidden md:flex flex-col gap-4">
-			<?php if ( is_active_sidebar( 'product-right' ) ) : ?>
-				<?php dynamic_sidebar( 'product-right' ); ?>
-			<?php endif; ?>
-		</div>
+	<div class="w-full flex flex-col gap-4 grow">
+		<?php
+		/**
+		 * Hook: woocommerce_single_product_summary.
+		 *
+		 * @hooked woocommerce_template_single_title - 5
+		 * @hooked woocommerce_template_single_rating - 10
+		 * @hooked woocommerce_template_single_price - 10
+		 * @hooked woocommerce_template_single_excerpt - 20
+		 * @hooked woocommerce_template_single_add_to_cart - 30
+		 * @hooked woocommerce_template_single_meta - 40
+		 * @hooked woocommerce_template_single_sharing - 50
+		 * @hooked WC_Structured_Data::generate_product_data() - 60
+		 */
+		do_action( 'woocommerce_single_product_summary' );
+		?>
+	</div>
+	<div class="hidden md:flex md:flex-row md:flex-wrap lg:flex-col gap-2">
+		<?php if ( is_active_sidebar( 'product-right' ) ) : ?>
+			<?php dynamic_sidebar( 'product-right' ); ?>
+		<?php endif; ?>
 	</div>
 </div>
-<div class="w-full flex flex-col gap-4">
+<div class="w-full flex flex-col gap-4 grow">
 	<?php
 	/**
 	 * Hook: woocommerce_after_single_product_summary.

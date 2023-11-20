@@ -41,32 +41,6 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 			<?php do_action( 'woocommerce_checkout_billing' ); ?>
 			<?php do_action( 'woocommerce_checkout_shipping' ); ?>
 			<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
-			<div class="w-full justify-start items-start gap-4 inline-flex">
-				<div
-					class="grow shrink basis-0 h-16 p-4 rounded-md border border-gray-200 justify-start items-center gap-5 flex">
-					<input type="radio" name="print_type" value="fast_print" class="w-6 h-6">
-					<div class="flex-col justify-start items-start inline-flex">
-						<div class="text-zinc-900 text-sm font-semibold leading-none">
-							<?php echo __( 'Fast' ); ?>
-						</div>
-						<div class="text-neutral-500 text-sm font-normal leading-tight">
-							<?php echo __( 'Receive after 24 hours' ); ?>
-						</div>
-					</div>
-				</div>
-				<div
-					class="grow shrink basis-0 h-16 p-4 rounded-md border border-gray-200 justify-start items-center gap-5 flex">
-					<input type="radio" name="print_type" value="normal_print" checked class="w-6 h-6">
-					<div class="flex-col justify-start items-start inline-flex">
-						<div class="text-zinc-900 text-sm font-semibold leading-none">
-							<?php echo __( 'Normal' ); ?>
-						</div>
-						<div class="text-neutral-500 text-sm font-normal leading-tight">
-							<?php echo __( 'Receive after 2-4 days' ); ?>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 
 	<?php endif; ?>

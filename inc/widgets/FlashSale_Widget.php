@@ -58,7 +58,9 @@ class FlashSale_Widget extends WP_Widget {
 					</div>
 				</div>
 				<div class="justify-start items-center gap-2 flex">
-					<div class="hidden md:block text-zinc-900 text-base font-semibold leading-tight"><?php echo __( 'End after' ); ?>:</div>
+					<div class="hidden md:block text-zinc-900 text-base font-semibold leading-tight">
+						<?php echo __( 'End after' ); ?>:
+					</div>
 					<div class="w-10 h-10 p-1 bg-green-100 rounded-md flex-col justify-center items-center gap-2.5 inline-flex">
 						<div class="hour text-green-500 text-lg font-semibold leading-snug"></div>
 					</div>
@@ -72,7 +74,8 @@ class FlashSale_Widget extends WP_Widget {
 					</div>
 				</div>
 			</div>
-			<input id="end_at" class="hidden" value="<?php echo ( new DateTime( $instance['end_at'] ) )->format( 'Y/m/d H:i:s' ); ?>">
+			<input id="end_at" class="hidden"
+				value="<?php echo ( new DateTime( $instance['end_at'] ) )->format( 'Y/m/d H:i:s' ); ?>">
 			<?php
 
 			$sale_products = new WP_Query(
@@ -84,31 +87,15 @@ class FlashSale_Widget extends WP_Widget {
 
 			if ( $sale_products->have_posts() ) :
 				?>
-				<div class="products-sale rounded-md border-2 border-green-500">
+				<ul class="products-sale rounded-md border-2 border-green-500">
 					<?php
-					while ( $sale_products->have_posts() ) :
+					while ( $sale_products->have_posts() ) {
 						$sale_products->the_post();
-						global $product;
-						$thumbnail = get_the_post_thumbnail_url( $product->get_id() );
-						?>
-						<div class="flex flex-col">
-							<?php if ( $thumbnail ) : ?>
-								<img src="<?php echo $thumbnail; ?>" alt="sale" class="w-64 h-64 rounded-md">
-								<div>
-									<a href="<?php the_permalink(); ?>">
-										<?php the_title(); ?>
-									</a>
-								</div>
-								<div>
-									<?php echo $product->get_price_html(); ?>
-								</div>
-							<?php endif; ?>
-						</div>
-						<?php
-					endwhile;
+						wc_get_template_part( 'content', 'product' );
+					}
 					wp_reset_postdata();
 					?>
-				</div>
+				</ul>
 			<?php endif; ?>
 		</div>
 

@@ -23,30 +23,30 @@ add_filter(
 	1
 );
 
-/**
- * Fires authenticated Ajax actions for logged-in users.
- */
 add_action(
 	'wp_ajax_minicart',
-	function (): void {
-
-		ob_start();
-		get_template_part( 'template-parts/mini-cart', 'items' );
-		$items = ob_get_clean();
-
-		ob_start();
-		get_template_part( 'template-parts/mini-cart', 'amount' );
-		$amount = ob_get_clean();
-
-		wp_send_json_success(
-			array(
-				'items'  => $items,
-				'amount' => $amount,
-				'count'  => WC()->cart->get_cart_contents_count(),
-			)
-		);
-	}
+	'mini_cart_ajax'
 );
+
+add_action( 'wp_ajax_nopriv_minicart', 'mini_cart_ajax' );
+
+function mini_cart_ajax(): void {
+	ob_start();
+	get_template_part( 'template-parts/mini-cart', 'items' );
+	$items = ob_get_clean();
+
+	ob_start();
+	get_template_part( 'template-parts/mini-cart', 'amount' );
+	$amount = ob_get_clean();
+
+	wp_send_json_success(
+		array(
+			'items'  => $items,
+			'amount' => $amount,
+			'count'  => WC()->cart->get_cart_contents_count(),
+		)
+	);
+}
 
 add_action( 'woocommerce_after_add_to_cart_button', 'add_buy_now_button' );
 
@@ -62,7 +62,7 @@ function add_buy_now_button() {
 
 	?>
 	<button id="buynow" type="button" data-id="<?php echo $product->get_id(); ?>"
-		class="w-full md:w-56 h-14 px-6 bg-green-500 rounded-md justify-center items-center gap-2 inline-flex">
+		class="grow h-14 px-6 bg-green-500 rounded-md justify-center items-center gap-2 inline-flex">
 		<div class="text-white text-base font-semibold leading-tight">
 			<?php echo __( 'Buy now' ); ?>
 		</div>

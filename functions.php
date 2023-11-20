@@ -78,7 +78,7 @@ add_action(
 /**
  * @author gingdev <thanh1101dev@gmail.com>
  */
-function enqueue( string $entrypoint ) {
+function enqueue( string $entrypoint ): void {
 	$assetPathResolver = new AssetPathResolver( get_template_directory() . '/build' );
 
 	$resolve = function ( string $uri ): string {
@@ -101,6 +101,13 @@ add_action(
 	'wp_head',
 	function (): void {
 		?>
+	<style>
+		.columns-<?php echo wc_get_default_products_per_row(); ?> {
+			display: grid;
+			grid-template-columns: repeat(<?php echo wc_get_default_products_per_row(); ?>, minmax(0, 1fr));
+			gap: 0.5rem;
+		}
+	</style>
 	<script>
 		const admin_ajax = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
 	</script>

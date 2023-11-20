@@ -51,26 +51,10 @@ class Product_Widget extends WP_Widget {
 				</div>
 				<ul class="hide-scrollbar multiple-items">
 					<?php
-					while ( $products->have_posts() ) :
+					while ( $products->have_posts() ) {
 						$products->the_post();
-						global $product;
-						$thumbnail = get_the_post_thumbnail_url( $product->get_id() );
-						?>
-						<li class="flex flex-col gap-2">
-							<?php if ( $thumbnail ) : ?>
-								<img src="<?php echo $thumbnail; ?>" alt="Product" class="w-32 h-32 md:w-64 md:h-64 rounded-md">
-							<?php endif; ?>
-							<div class="w-32 md:w-64 text-zinc-900 text-base font-normal leading-snug">
-								<a href="<?php echo $product->get_permalink(); ?>">
-									<?php echo $product->get_title(); ?>
-								</a>
-							</div>
-							<div>
-								<?php echo $product->get_price_html(); ?>
-							</div>
-						</li>
-						<?php
-					endwhile;
+						wc_get_template_part( 'content', 'product' );
+					}
 					wp_reset_postdata();
 					?>
 				</ul>

@@ -57,7 +57,7 @@ class BadgeProduct_Widget extends WP_Widget {
 
 		echo $args['before_widget'];
 		?>
-		<div class="w-48 p-5 border-neutral-100 border rounded-md flex-col justify-start items-start gap-4 inline-flex"
+		<div class="w-48 h-full p-5 border-neutral-100 border rounded-md flex-col justify-start items-start gap-4 inline-flex"
 			style="background-color: <?php echo $instance['color']; ?>;">
 			<?php if ( '' != $icon = $instance['icon'] ) : ?>
 				<div class="w-8 h-8 px-0.5 py-1 justify-center items-center inline-flex">

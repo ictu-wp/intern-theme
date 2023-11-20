@@ -1,7 +1,10 @@
 <div class="w-full h-20 px-4 md:px-10 lg:px-20 bg-white justify-between items-center inline-flex">
-	<div class="mobile-navigation w-20 md:hidden inline-flex items-center justify-center">
-		<i class="fa-solid fa-list"></i>
-	</div>
+	<a href="#" class="mobile-sidebar w-20 md:hidden inline-flex items-center justify-center">
+		<svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+			stroke="currentColor" class="w-6 h-6">
+			<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+		</svg>
+	</a>
 	<div class="basis-48 shrink-0 grow-0 h-full inline-flex justify-center items-center">
 		<?php the_custom_logo(); ?>
 	</div>
@@ -31,7 +34,7 @@
 			</div>
 		</div>
 	<?php endif; ?>
-	<div class="justify-center items-center gap-2 flex">
+	<a href="#mini-cart" rel="modal:open" class="justify-center items-center gap-2 flex">
 		<div class="w-8 h-8 px-0.5 pt-0.5 pb-px justify-center items-center flex">
 			<svg xmlns="http://www.w3.org/2000/svg" width="28" height="30" viewBox="0 0 28 30" fill="none">
 				<path fill-rule="evenodd" clip-rule="evenodd"
@@ -50,15 +53,16 @@
 				<?php echo __( 'Cart' ); ?>
 			</div>
 			<div class="text-neutral-500 text-xs font-normal leading-none">
-				<a href="#mini-cart" rel="modal:open">
-					<span id="cart-count">
-						<?php echo WC()->cart->get_cart_contents_count(); ?>
-					</span>
-					<?php echo __( 'items' ); ?>
-				</a>
+				<span id="cart-count">
+					<?php echo WC()->cart->get_cart_contents_count(); ?>
+				</span>
+				<?php echo __( 'items' ); ?>
 			</div>
 		</div>
-	</div>
+		<div id="mini-cart" class="modal">
+			<?php get_template_part( 'template-parts/mini-cart' ); ?>
+		</div>
+	</a>
 	<?php
 	if ( is_user_logged_in() ) :
 		$user_id = get_current_user_id();
@@ -79,9 +83,6 @@
 				class="dropdown hidden top-14 right-0 absolute z-20 py-2 bg-white w-fit rounded-md shadow border border-gray-200">
 				<?php get_template_part( 'template-parts/user-dropdown' ); ?>
 			</div>
-		</div>
-		<div id="mini-cart" class="modal">
-			<?php get_template_part( 'template-parts/mini-cart' ); ?>
 		</div>
 	<?php else : ?>
 		<div class="w-48 h-9 justify-center items-center gap-2 inline-flex">

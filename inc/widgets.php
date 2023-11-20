@@ -55,6 +55,14 @@ add_action(
 				'after_widget'  => '</div>',
 			)
 		);
+		register_sidebar(
+			array(
+				'name'          => __( 'Right frontpage content' ),
+				'id'            => 'frontpage-right',
+				'before_widget' => '<div id="%1$s" class="%2$s flex flex-col gap-2">',
+				'after_widget'  => '</div>',
+			)
+		);
 
 		register_widget( SupportPhone_Widget::class );
 		register_widget( BaseLocation_Widget::class );
