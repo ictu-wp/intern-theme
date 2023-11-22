@@ -7,9 +7,6 @@ An implement of [iCheckPrint](https://www.figma.com/file/IBzeM7Qa0vsxUukNKuhEqW/
 - PHP 8.1+ (with Composer for package manager)
 - NodeJS 18+
 
-![](https://i.imgur.com/N8KMZTy.png)
-
-
 ## Build
 
 ```bash

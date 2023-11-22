@@ -7,7 +7,7 @@ class Ging_Walker_Nav_Menu extends Walker_Nav_Menu {
 		if ( $is_first ) {
 			ob_start();
 			?>
-			<li class="w-56 h-7 justify-start items-center gap-3 inline-flex">
+			<li class="pc-categories">
 				<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" viewBox="0 0 13 12" fill="none">
 					<path fill-rule="evenodd" clip-rule="evenodd"
 						d="M0.513916 1.3335C0.513916 1.05735 0.737774 0.833496 1.01392 0.833496L11.6806 0.833497C11.9567 0.833497 12.1806 1.05735 12.1806 1.3335C12.1806 1.60964 11.9567 1.8335 11.6806 1.8335L1.01392 1.8335C0.737774 1.8335 0.513916 1.60964 0.513916 1.3335Z"

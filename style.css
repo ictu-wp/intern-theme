@@ -17,6 +17,16 @@ body {
     animation: moveDown .6s;
 }
 
+@keyframes moveDown {
+    0% {
+        transform: translateY(-100%)
+    }
+
+    to {
+        transform: translateY(0)
+    }
+}
+
 .blocker {
     @apply z-50;
 }
@@ -26,11 +36,15 @@ body {
 }
 
 .ging-menu {
-    @apply hidden md:inline-flex w-full h-14 px-20 bg-white border-t border-b border-gray-200 justify-between items-center gap-8;
+    @apply hidden py-4 md:py-0 flex-wrap md:flex-nowrap flex-col md:flex-row md:inline-flex w-full h-full md:h-14 px-2 md:px-20 bg-white border-t border-b border-gray-200 justify-between md:items-center gap-2 md:gap-8;
 }
 
-.ging-menu li {
-    @apply h-full justify-center items-center;
+.ging-menu > li {
+    @apply pb-4 md:pb-0 h-full md:justify-center items-center text-zinc-900 text-sm font-semibold leading-none hover:text-green-500 md:inline-flex gap-2;
+}
+
+.pc-categories {
+    @apply hidden w-56 h-7 justify-start items-center gap-3;
 }
 
 .categories-items {
@@ -45,8 +59,8 @@ body {
     @apply block;
 }
 
-.ging-menu > li {
-    @apply text-zinc-900 text-sm font-semibold leading-none hover:text-green-500 inline-flex gap-2;
+.menu-item > svg {
+    @apply hidden md:block
 }
 
 #main {
@@ -264,7 +278,7 @@ del, ins {
 }
 
 .menu-item-has-children > ul {
-    @apply hidden bg-white h-fit shadow absolute -left-4 top-12 w-40 flex-col justify-start items-start gap-4 z-10 p-6 border-t-2 border-green-500;
+    @apply w-full pt-4 px-4 inline-flex md:hidden bg-white h-fit md:shadow md:absolute -left-4 top-12 md:w-40 flex-col justify-start items-start gap-4 z-10 md:p-6 md:border-t-2 border-green-500;
 }
 
 .menu-item-has-children:hover > ul {
@@ -272,7 +286,7 @@ del, ins {
 }
 
 .sub-menu > li {
-    @apply border-b border-b-gray-200 w-full pb-4 text-zinc-900 hover:text-green-500;
+    @apply md:border-b border-b-gray-200 w-full md:pb-4 text-zinc-900 hover:text-green-500;
 }
 
 .footer-columns-1, .footer-columns-2 {

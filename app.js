@@ -22,6 +22,10 @@ jQuery(function () {
     $header.addClass('sticky');
   });
 
+  $('.mobile-sidebar').on('click', function () {
+    $('.ging-menu').toggle();
+  });
+
   $('.multiple-items').each(function () {
     $(this).slick({
       infinite: false,
