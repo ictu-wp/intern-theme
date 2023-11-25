@@ -44,7 +44,7 @@ class FlashSale_Widget extends WP_Widget {
 		?>
 		<div id="countdown" class="bg-white px-2 md:px-[89px] py-[50px] flex flex-col gap-6">
 			<div class="w-full h-11 justify-start items-center inline-flex">
-				<div class="grow shrink basis-0 h-11 justify-start items-start gap-2 flex">
+				<div class="grow shrink basis-0 justify-start items-start gap-2 flex">
 					<div class="justify-start items-start flex">
 						<div class="text-green-500 text-3xl font-semibold leading-10">F</div>
 						<div class="w-5 pt-1.5 justify-start items-start flex">
@@ -57,7 +57,7 @@ class FlashSale_Widget extends WP_Widget {
 						<div class="text-green-500 text-3xl font-semibold leading-10">ASH SALE</div>
 					</div>
 				</div>
-				<div class="justify-start items-center gap-2 flex">
+				<div class="hidden sm:flex justify-start items-center gap-2">
 					<div class="hidden md:block text-zinc-900 text-base font-semibold leading-tight">
 						<?php echo __( 'End after' ); ?>:
 					</div>

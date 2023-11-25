@@ -7,6 +7,7 @@ class Ging_Walker_Nav_Menu extends Walker_Nav_Menu {
 		if ( $is_first ) {
 			ob_start();
 			?>
+			<?php echo get_search_form( array( 'class' => 'w-full flex md:hidden mb-4' ) ); ?>
 			<li class="pc-categories">
 				<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" viewBox="0 0 13 12" fill="none">
 					<path fill-rule="evenodd" clip-rule="evenodd"

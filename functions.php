@@ -1,5 +1,10 @@
 <?php
+
+// Fix patch for carbon fields ^^
+define( 'Carbon_Fields\\URL', get_template_directory_uri() . '/vendor/htmlburger/carbon-fields' );
+
 use BenTools\WebpackEncoreResolver\AssetPathResolver;
+use Carbon_Fields\Carbon_Fields;
 
 require get_template_directory() . '/vendor/autoload.php';
 require get_template_directory() . '/inc/custom-searchform.php';
@@ -57,6 +62,8 @@ add_action(
 			)
 		);
 		add_theme_support( 'woocommerce' );
+
+		Carbon_Fields::boot();
 	}
 );
 

@@ -72,7 +72,7 @@ body {
 }
 
 .woocommerce-breadcrumb {
-    @apply my-4 flex flex-row justify-items-center items-center gap-4 text-[#767676];
+    @apply my-4 flex flex-row flex-wrap justify-items-center items-center gap-4 text-[#767676] text-sm;
 }
 
 .product_title {
@@ -80,7 +80,15 @@ body {
 }
 
 li.product {
-    @apply relative grid grid-cols-1;
+    @apply relative;
+}
+
+li.product > a {
+    @apply grid grid-cols-1 w-full;
+}
+
+li.product > a > img {
+    @apply w-full;
 }
 
 /* .woocommerce-LoopProduct-link {
@@ -373,12 +381,20 @@ span.current {
     @apply !grid-cols-1;
 }
 
+.slick-slide > div {
+    @apply flex flex-row justify-start;
+}
+
 .slick-slide > div > li {
     @apply px-2;
 }
 
 .slick-list {
-    @apply !px-0;
+    @apply !pl-0 pr-16;
+}
+
+.customer-showcase > .slick-list {
+    @apply pr-0;
 }
 
 #wpgs-gallery .slick-slide.wcgs-thumb img {
@@ -403,7 +419,7 @@ input[type=number] {
 
 /* Woocommerce swatches */
 .button-variable-items-wrapper {
-    @apply w-full h-fit justify-start items-start gap-2 inline-flex;
+    @apply w-full h-fit justify-start items-start gap-2 inline-flex flex-wrap;
 }
 
 .variable-item {
@@ -559,7 +575,7 @@ button[name=update_cart] {
     @apply flex flex-row gap-2 my-4 w-full;
 }
 
-button[name=apply_coupon], .wc-proceed-to-checkout {
+.coupon > button, .wc-proceed-to-checkout {
     @apply bg-green-500 text-white w-full p-4 rounded-md inline-flex justify-center;
 }
 

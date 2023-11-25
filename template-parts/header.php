@@ -5,10 +5,10 @@
 			<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 		</svg>
 	</a>
-	<div class="basis-48 shrink-0 grow-0 h-full inline-flex justify-center items-center">
+	<div class="basis-24 sm:basis-48 shrink-0 grow-0 h-full inline-flex justify-center items-center">
 		<?php the_custom_logo(); ?>
 	</div>
-	<?php get_search_form(); ?>
+	<?php get_search_form( array( 'class' => 'hidden md:flex md:w-80 lg:w-96' ) ); ?>
 	<?php if ( false !== $phone = get_theme_mod( 'phone_number' ) ) : ?>
 		<div class="header-phone hidden lg:flex justify-center items-center gap-2">
 			<div class="w-8 h-8 px-0.5 py-1 justify-center items-center flex">

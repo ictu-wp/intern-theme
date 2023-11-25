@@ -26,11 +26,15 @@ jQuery(function () {
     $('.ging-menu').toggle();
   });
 
+  $('.banner-main').slick({
+    slidesPerRow: 1,
+    dots: true,
+  });
+
   $('.multiple-items').each(function () {
     $(this).slick({
       infinite: false,
       slidesPerRow: 4,
-      centerMode: true,
       responsive: [
         {
           breakpoint: 768,

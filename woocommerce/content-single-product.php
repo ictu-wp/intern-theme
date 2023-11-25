@@ -31,8 +31,8 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'relative w-full md:flex flex-wrap lg:flex-nowrap flex-row gap-4', $product ); ?>>
-	<div class="w-full lg:w-1/3 grow-0 shrink-0">
+<div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'relative w-full sm:flex flex-wrap lg:flex-nowrap flex-row gap-4', $product ); ?>>
+	<div class="w-full md:w-1/2 lg:w-1/3 grow-0 shrink-0">
 		<?php
 		/**
 		 * Hook: woocommerce_before_single_product_summary.
@@ -43,7 +43,7 @@ if ( post_password_required() ) {
 		do_action( 'woocommerce_before_single_product_summary' );
 		?>
 	</div>
-	<div class="w-full flex flex-col gap-4 grow">
+	<div class="w-full flex flex-col gap-4 grow md:basis-[40%]">
 		<?php
 		/**
 		 * Hook: woocommerce_single_product_summary.
@@ -60,7 +60,7 @@ if ( post_password_required() ) {
 		do_action( 'woocommerce_single_product_summary' );
 		?>
 	</div>
-	<div class="hidden md:flex md:flex-row md:flex-wrap lg:flex-col gap-2">
+	<div class="hidden sm:flex sm:flex-row lg:flex-col flex-wrap gap-2">
 		<?php if ( is_active_sidebar( 'product-right' ) ) : ?>
 			<?php dynamic_sidebar( 'product-right' ); ?>
 		<?php endif; ?>

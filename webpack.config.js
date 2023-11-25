@@ -18,7 +18,7 @@ Encore
           watch: false
         }
         options.watchFiles = {
-          paths: ['./*.php', './{inc,template-parts,woocommerce}/**/*.php']
+          paths: ['./*.{php,js,css}', './{inc,template-parts,woocommerce}/**/*.php']
         }
       }
     )
