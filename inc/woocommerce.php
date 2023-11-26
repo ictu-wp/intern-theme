@@ -219,4 +219,14 @@ remove_action( 'woocommerce_before_checkout_form_cart_notices', 'woocommerce_out
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_output_all_notices', 10 );
 remove_action( 'woocommerce_before_cart', 'woocommerce_output_all_notices', 10 );
 remove_action( 'woocommerce_order_details_after_order_table', 'woocommerce_order_again_button' );
-// remove_action( 'woocommerce_account_view-order_endpoint', 'woocommerce_account_view_order' );
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+
+
+add_action( 'woocommerce_before_shop_loop_item_title', 'gingdev_template_loop_product_thumbnail', 10 );
+function gingdev_template_loop_product_thumbnail() {
+	?>
+	<div class="w-full h-fit overflow-hidden rounded-md">
+		<?php echo woocommerce_get_product_thumbnail(); ?>
+	</div>
+	<?php
+}

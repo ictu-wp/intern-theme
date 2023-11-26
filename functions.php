@@ -107,12 +107,14 @@ function enqueue( string $entrypoint ): void {
 add_action(
 	'wp_head',
 	function (): void {
+		$columns = wc_get_default_products_per_row();
 		?>
 	<style>
-		.columns-<?php echo wc_get_default_products_per_row(); ?> {
+		.columns-<?php echo $columns; ?> {
 			display: grid;
-			grid-template-columns: repeat(<?php echo wc_get_default_products_per_row(); ?>, minmax(0, 1fr));
+			grid-template-columns: repeat(<?php echo $columns; ?>, minmax(0, 1fr));
 			gap: 0.5rem;
+			row-gap: 32px;
 		}
 	</style>
 	<script>

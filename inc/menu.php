@@ -24,6 +24,15 @@ class Ging_Walker_Nav_Menu extends Walker_Nav_Menu {
 					<?php echo __( 'All categories' ); ?>
 					<div>
 						<?php categories_items( 12 ); ?>
+						<div class="w-full h-11 flex-col justify-center items-center gap-2.5 inline-flex mb-4">
+							<div
+								class="h-11 px-6 rounded-md border border-green-500 justify-center items-center gap-2.5 inline-flex">
+								<a href="<?php echo wc_get_page_permalink( 'shop' ); ?>"
+									class="text-center text-green-500 text-base font-semibold leading-tight">
+									<?php echo __( 'See all' ); ?>
+								</a>
+							</div>
+						</div>
 					</div>
 				</div>
 				<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">

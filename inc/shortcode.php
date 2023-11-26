@@ -10,7 +10,7 @@ function logo_showcase(): string {
 	$logo_query = new WP_Query( $query );
 	ob_start();
 	?>
-	<div class="logo_showcase w-full h-36 px-20 justify-start items-center gap-12 inline-flex bg-white">
+	<div class="logo_showcase w-full h-36 px-20 justify-start items-center gap-12 inline-flex bg-white overflow-x-auto">
 		<?php
 		if ( $logo_query->have_posts() ) :
 			while ( $logo_query->have_posts() ) :
@@ -45,8 +45,14 @@ add_shortcode(
 function show_woocommerce_categories( string $title, int $number ): void {
 	?>
 	<div class="px-2 md:px-[89px] py-[50px] bg-gray-200">
-		<div class="w-full text-zinc-900 text-2xl font-semibold leading-7 mb-2">
-			<?php echo $title; ?>
+		<div class="w-full h-7 justify-start items-end gap-4 inline-flex mb-2">
+			<div class="grow shrink basis-0 text-zinc-900 text-2xl font-semibold leading-7">
+				<?php echo $title; ?>
+			</div>
+			<a href="<?php echo wc_get_page_permalink( 'shop' ); ?>"
+				class="text-green-500 text-base font-semibold leading-tight">
+				<?php echo __( 'See all' ); ?>
+			</a>
 		</div>
 		<?php categories_items( $number ); ?>
 	</div>
@@ -57,8 +63,9 @@ function categories_items( int $number ) {
 	/** @var list<WP_Term> */
 	$categories = get_categories(
 		array(
-			'taxonomy' => 'product_cat',
-			'number'   => $number,
+			'taxonomy'   => 'product_cat',
+			'number'     => $number,
+			'hide_empty' => false,
 		)
 	);
 

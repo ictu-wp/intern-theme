@@ -53,15 +53,19 @@ class Banner_Widget extends Widget {
 					<?php endforeach; ?>
 				</div>
 			</div>
+			<?php if ( $instance['rimages'] ) : ?>
 			<div class="grow flex flex-col gap-4">
 				<?php
+				$num_images = \count( $instance['rimages'] );
+				$height     = ( 432 - 16 * ( $num_images - 1 ) ) / $num_images;
 				foreach ( $instance['rimages'] as $id ) :
 					/** @var string */
 					$image = wp_get_attachment_image_url( $id );
 					?>
-					<img src="<?php echo $image; ?>" class="rounded-md h-52 object-cover">
+					<img src="<?php echo $image; ?>" class="rounded-md object-cover" style="height: <?php echo $height; ?>px;">
 				<?php endforeach; ?>
 			</div>
+			<?php endif; ?>
 		</div>
 		<?php
 		echo $args['after_widget'];

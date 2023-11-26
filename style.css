@@ -91,8 +91,8 @@ li.product > a > img {
     @apply w-full;
 }
 
-/* .woocommerce-LoopProduct-link {
-    @apply w-full h-[300px] overflow-hidden inline-block;
+.woocommerce-LoopProduct-link {
+    @apply w-full overflow-hidden inline-block;
 }
 
 .woocommerce-LoopProduct-link img {
@@ -105,8 +105,9 @@ li.product > a > img {
 }
 
 .woocommerce-LoopProduct-link:hover img {
+    @apply object-cover;
     transform: scale(1.5);
-} */
+}
 
 div > li.product {
     @apply h-full;
@@ -196,16 +197,12 @@ ul.products {
     @apply text-green-500 text-lg font-semibold leading-snug;
 }
 
-li.product > :last-child {
-    @apply hidden;
+.woocommerce-loop-category__title {
+    @apply text-center;
 }
 
 .onsale {
-    @apply absolute top-1 left-1 p-1 bg-red-500 text-white z-50;
-}
-
-.attachment-woocommerce_thumbnail {
-    @apply rounded-md;
+    @apply absolute top-1 left-1 p-1 bg-red-500 text-white z-10;
 }
 
 h2 {
@@ -302,7 +299,7 @@ del, ins {
 }
 
 .footer-columns-1 > h2, .footer-columns-2 > h2 {
-    @apply text-white text-base font-semibold leading-tight;
+    @apply w-full text-white text-base font-semibold leading-tight;
 }
 
 .page-numbers {
@@ -326,7 +323,7 @@ ul.customer-showcase > div > div > div > div {
 }
 
 .woocommerce-pagination {
-    @apply mt-2;
+    @apply mt-8;
 }
 
 .woocommerce-pagination > ul {
@@ -393,8 +390,16 @@ span.current {
     @apply !pl-0 pr-16;
 }
 
-.customer-showcase > .slick-list {
+.customer-showcase > .slick-list, .banner-main > .slick-list {
     @apply pr-0;
+}
+
+.banner-main {
+    @apply relative;
+}
+
+.banner-main > ul {
+    @apply absolute bottom-0;
 }
 
 #wpgs-gallery .slick-slide.wcgs-thumb img {
@@ -518,8 +523,12 @@ button[name=woocommerce_checkout_place_order] {
     @apply p-4 mb-4 text-sm text-red-800 bg-red-50;
 }
 
+.woocommerce-message, .woocommerce-thankyou-order-details, .woocommerce-notice--success {
+    @apply p-4 text-sm text-green-800 bg-green-50;
+}
+
 .woocommerce-message {
-    @apply p-4 mb-4 text-sm text-green-800 bg-green-50;
+    @apply mb-4;
 }
 
 .woocommerce-message > a {
@@ -593,4 +602,17 @@ table.woocommerce-MyAccount-orders {
 
 .cart_totals > table > tbody > tr {
     @apply flex flex-row justify-between;
+}
+
+.logo_showcase::-webkit-scrollbar {
+    display: none;
+}
+
+.logo_showcase {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+a.add_to_cart_button, a.product_type_grouped {
+    @apply !hidden;
 }
