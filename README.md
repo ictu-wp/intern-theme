@@ -24,6 +24,8 @@ npm run dev-server
 
 ## Thank to
 
+- [Kim Thoa](skype:kimthoadtk92?chat) for helpful guide.
+
 - [Symfony webpack encore](https://github.com/symfony/webpack-encore)
 
 - [Woocommerce Sample Data](https://github.com/woocommerce/woocommerce/blob/trunk/plugins/woocommerce/sample-data/sample_products.csv) for sample data.

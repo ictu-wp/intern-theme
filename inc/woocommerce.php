@@ -230,3 +230,34 @@ function gingdev_template_loop_product_thumbnail() {
 	</div>
 	<?php
 }
+
+/*
+work later
+function custom_checkout_field_radio() {
+	?>
+	<h3 class="text-zinc-900 text-2xl font-semibold leading-7 my-2">
+		<?php echo __('Print type'); ?>
+	</h3>
+
+	<?php woocommerce_form_field('print_type', array(
+		'type'      => 'radio',
+		'options'   => array(
+			'fast'   => __('Fast Print', 'woocommerce'),
+			'normal' => __('Normal Print', 'woocommerce')
+		),
+		'default' => 'normal',
+	), WC()->checkout->get_value('print_type')); ?>
+
+	<?php
+}
+add_action('woocommerce_after_order_notes', 'custom_checkout_field_radio');
+
+function save_custom_checkout_field_ratio(int $order_id) {
+	$args = wp_parse_args($_POST, [
+		'print_type' => 'normal'
+	]);
+
+	update_post_meta($order_id, 'print_type', $args['print_type']);
+}
+add_action('woocommerce_checkout_create_order', 'save_custom_checkout_field_ratio');
+*/

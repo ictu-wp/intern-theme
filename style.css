@@ -503,10 +503,6 @@ form.woocommerce-checkout > div {
     @apply p-4 rounded-md border border-gray-200 justify-start items-center gap-5 inline-flex;
 }
 
-.wc_payment_method > input {
-    @apply w-6 h-6;
-}
-
 .payment_box {
     @apply hidden;
 }
@@ -615,4 +611,8 @@ table.woocommerce-MyAccount-orders {
 
 a.add_to_cart_button, a.product_type_grouped {
     @apply !hidden;
+}
+
+input[type=radio] {
+    transform: scale(2);
 }

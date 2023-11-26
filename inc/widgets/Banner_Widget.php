@@ -43,13 +43,13 @@ class Banner_Widget extends Widget {
 		?>
 		<div class="flex-wrap px-2 md:px-20 flex flex-row gap-4 md:flex-nowrap">
 			<div class="w-full md:basis-3/4 grow-0 shrink-0 overflow-hidden">
-				<div class="banner-main">
+				<div class="banner-main rounded-md overflow-hidden">
 					<?php
 					foreach ( $instance['main_slides'] as $id ) :
 						/** @var string */
 						$image = wp_get_attachment_image_url( $id );
 						?>
-						<img src="<?php echo $image; ?>" class="rounded-md h-[432px] object-cover">
+						<img src="<?php echo $image; ?>" class="h-[432px] object-cover">
 					<?php endforeach; ?>
 				</div>
 			</div>
