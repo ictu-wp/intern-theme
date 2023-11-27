@@ -1,8 +1,11 @@
-<img src="https://i.imgur.com/kyPcRC5.png" width="200px" align="right">
+<img src="https://i.imgur.com/kyPcRC5.png" width="120px" align="right">
 
 # Intern Project
 
 An implement of [iCheckPrint](https://www.figma.com/file/IBzeM7Qa0vsxUukNKuhEqW/iCheck-Print?node-id=30%3A2338&mode=dev)
+
+> [!NOTE]
+> Project chỉ mang tính chất học liệu. Không đảm bảo bất cứ rủi ro khi sử dụng.
 
 ## Requirements
 
