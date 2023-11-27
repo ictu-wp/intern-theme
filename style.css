@@ -616,3 +616,7 @@ a.add_to_cart_button, a.product_type_grouped {
 input[type=radio] {
     transform: scale(2);
 }
+
+.product_meta {
+    @apply hidden;
+}

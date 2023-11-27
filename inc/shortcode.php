@@ -65,7 +65,6 @@ function categories_items( int $number ) {
 		array(
 			'taxonomy'   => 'product_cat',
 			'number'     => $number,
-			'hide_empty' => false,
 		)
 	);
 
